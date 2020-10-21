@@ -30,7 +30,7 @@
              <li class="nav-item {{ Active::check('dashboard') }} ">
                <a class="nav-link" href="{{ route('page.dashboard') }}" >
                  <i class="nav-icon fas fa-tachometer-alt"></i>
-                 <p> DASHBOARD </p>
+                 <p> Dashboard </p>
                </a>
              </li>
 
@@ -38,43 +38,36 @@
              <li class="nav-item {{ Active::check('member') }} ">
                <a class="nav-link" href="{{ route('page.member') }}" >
                  <i class="nav-icon far fa-address-card"></i>
-                 <p> จัดการสมาชิก </p>
+                 <p> Member Manage </p>
                </a>
              </li>
 
 
-        <!-- <li class="nav-item has-treeview menu-open">
-          <a href="#" class="nav-link active">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
-            <p>
-              Dashboard
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-
-            <li class="nav-item {{ Active::check('home') }} ">
-              <a class="nav-link" href="{{ route('page.home') }}" >
-                <i class="far fa-circle nav-icon"></i>
-                <p>DASHBOARD 1</p>
-              </a>
-            </li>
-
-            <li class="nav-item {{ Active::check('dashboard') }} ">
-              <a class="nav-link" href="{{ route('page.dashboard') }}" >
-                <i class="far fa-circle nav-icon"></i>
-                <p>DASHBOARD 2</p>
-              </a>
-            </li>
-          </ul>
-        </li> -->
+             <li class="nav-item {{ Active::check('member') }} ">
+               <a class="nav-link" href="{{ route('page.member') }}" >
+                 <i class="nav-icon fas fa-book"></i>
+                 <p> Research Project </p>
+               </a>
+             </li>
 
 
+             <li class="nav-item {{ Active::check('member') }} ">
+               <a class="nav-link" href="{{ route('page.member') }}" >
+                 <i class="nav-icon fa fa-map"></i>
+                 <p> Published Journal </p>
+               </a>
+             </li>
 
 
+             <li class="nav-item {{ Active::check('member') }} ">
+               <a class="nav-link" href="{{ route('page.member') }}" >
+                 <i class="nav-icon fas fa-tree"></i>
+                 <p> Utilization </p>
+               </a>
+             </li>
 
 
-        <li class="nav-header">MISCELLANEOUS</li>
+        <!-- <li class="nav-header">MISCELLANEOUS</li>
         <li class="nav-item">
           <a href="https://adminlte.io/docs/3.0" class="nav-link">
             <i class="nav-icon fas fa-file"></i>
@@ -164,7 +157,39 @@
             <i class="nav-icon far fa-circle text-info"></i>
             <p>Informational</p>
           </a>
-        </li>
+        </li> -->
+
+
+        <!-- TREEVIEW Start----------------------------------------------------------------->
+                <!-- <li class="nav-item has-treeview menu-open">
+                  <a href="#" class="nav-link active">
+                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                      Treeview
+                      <i class="right fas fa-angle-left"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+
+                    <li class="nav-item {{ Active::check('home') }} ">
+                      <a class="nav-link" href="{{ route('page.home') }}" >
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Treeview 1</p>
+                      </a>
+                    </li>
+
+                    <li class="nav-item {{ Active::check('dashboard') }} ">
+                      <a class="nav-link" href="{{ route('page.dashboard') }}" >
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Treeview 2</p>
+                      </a>
+                    </li>
+                  </ul>
+                </li> -->
+        <!-- TREEVIEW End----------------------------------------------------------------->
+
+
+
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

@@ -9,13 +9,12 @@ use Illuminate\Support\Facades\Storage;
 use File;
 
 
-class MinController extends Controller
+class MainController extends Controller
 {
 
   public function index(){
     return view('layout.home');
   }
-
 
 
   public function dashboard(){
@@ -26,6 +25,24 @@ class MinController extends Controller
   public function member(){
     return view('frontend.member');
   }
+
+
+  public function research(){
+    return view('frontend.research');
+  }
+
+
+  public function journal(){
+    return view('frontend.journal');
+  }
+
+
+  public function ultil(){
+    return view('frontend.ultil');
+  }
+
+
+
 
   //
   // public function member()
@@ -65,5 +82,6 @@ class MinController extends Controller
   //   }
   //
   // }
+
 
 }

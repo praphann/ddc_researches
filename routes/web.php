@@ -16,11 +16,29 @@ Route::get('/', function () {
 });
 
 
-Route::get('/home','MinController@index') -> name('page.home');
-Route::get('/dashboard','MinController@dashboard') -> name('page.dashboard');
+Route::get('/home','MainController@index') -> name('page.home');
+Route::get('/dashboard','MainController@dashboard') -> name('page.dashboard');
 
 
-// FORM -> person_form
-Route::get('/member_form','MinController@member') -> name('page.member');
-// INSERT form -> person_form
-Route::post('/person_form_post','MinController@insert') -> name('person_form.insert');
+// FORM  MEMBER
+Route::get('/member_form','MainController@member') -> name('page.member');
+// FORM  MEMBER  -- INSERT
+Route::post('/member_insert','MainController@insert') -> name('member.insert');
+
+
+// FORM  RESEARCH  PROJECT
+Route::get('/research_form','MainController@member') -> name('page.research');
+// FORM  RESEARCH  PROJECT  -- INSERT
+Route::post('/research_insert','MainController@insert') -> name('research.insert');
+
+
+// FORM  PUBLISHED  JOURNAL
+Route::get('/journal_form','MainController@member') -> name('page.journal');
+// FORM  PUBLISHED  JOURNAL  -- INSERT
+Route::post('/journal_insert','MainController@insert') -> name('journal.insert');
+
+
+// FORM  ULTILIZATION
+Route::get('/ultil_form','MainController@ultil') -> name('page.ultil');
+// FORM  ULTILIZATION  -- INSERT
+Route::post('/ultil_insert','MainController@insert') -> name('ultil.insert');
