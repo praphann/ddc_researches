@@ -163,6 +163,11 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
+         * ACTIVE State
+         */
+        Pyaesone17\ActiveState\ActiveStateServiceProvider::class,
+
+        /*
          * Package Service Providers...
          */
 
@@ -174,8 +179,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
-        Pyaesone17\ActiveState\ActiveStateServiceProvider::class,
 
     ],
 
@@ -228,9 +231,11 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
-
+        /*
+         * ACTIVE State
+         */
         'Active' => Pyaesone17\ActiveState\ActiveFacade::class,
-        
+
     ],
 
 ];
