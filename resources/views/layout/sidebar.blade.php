@@ -43,24 +43,24 @@
              </li>
 
 
-             <li class="nav-item {{ Active::check('member') }} ">
-               <a class="nav-link" href="{{ route('page.member') }}" >
+             <li class="nav-item {{ Active::check('research') }} ">
+               <a class="nav-link" href="{{ route('page.research') }}" >
                  <i class="nav-icon fas fa-book"></i>
                  <p> Research Project </p>
                </a>
              </li>
 
 
-             <li class="nav-item {{ Active::check('member') }} ">
-               <a class="nav-link" href="{{ route('page.member') }}" >
+             <li class="nav-item {{ Active::check('journal') }} ">
+               <a class="nav-link" href="{{ route('page.journal') }}" >
                  <i class="nav-icon fa fa-map"></i>
                  <p> Published Journal </p>
                </a>
              </li>
 
 
-             <li class="nav-item {{ Active::check('member') }} ">
-               <a class="nav-link" href="{{ route('page.member') }}" >
+             <li class="nav-item {{ Active::check('ultil') }} ">
+               <a class="nav-link" href="{{ route('page.ultil') }}" >
                  <i class="nav-icon fas fa-tree"></i>
                  <p> Utilization </p>
                </a>
