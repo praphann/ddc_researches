@@ -59,8 +59,8 @@
              </li>
 
 
-             <li class="nav-item {{ Active::check('ultil') }} ">
-               <a class="nav-link" href="{{ route('page.ultil') }}" >
+             <li class="nav-item {{ Active::check('util') }} ">
+               <a class="nav-link" href="{{ route('page.util') }}" >
                  <i class="nav-icon fas fa-tree"></i>
                  <p> Utilization </p>
                </a>

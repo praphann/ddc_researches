@@ -27,18 +27,18 @@ Route::post('/member_insert','MainController@insert') -> name('member.insert');
 
 
 // FORM  RESEARCH  PROJECT
-Route::get('/research_form','MainController@member') -> name('page.research');
+Route::get('/research_form','MainController@research') -> name('page.research');
 // FORM  RESEARCH  PROJECT  -- INSERT
 Route::post('/research_insert','MainController@insert') -> name('research.insert');
 
 
 // FORM  PUBLISHED  JOURNAL
-Route::get('/journal_form','MainController@member') -> name('page.journal');
+Route::get('/journal_form','MainController@journal') -> name('page.journal');
 // FORM  PUBLISHED  JOURNAL  -- INSERT
 Route::post('/journal_insert','MainController@insert') -> name('journal.insert');
 
 
 // FORM  ULTILIZATION
-Route::get('/ultil_form','MainController@ultil') -> name('page.ultil');
+Route::get('/util_form','MainController@util') -> name('page.util');
 // FORM  ULTILIZATION  -- INSERT
-Route::post('/ultil_insert','MainController@insert') -> name('ultil.insert');
+Route::post('/util_insert','MainController@insert') -> name('util.insert');

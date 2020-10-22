@@ -37,14 +37,14 @@ class MainController extends Controller
   }
 
 
-  public function ultil(){
-    return view('frontend.ultil');
+  public function util(){
+    return view('frontend.util');
   }
 
 
 
 
-  //
+
   // public function member()
   // {
   //   $gender = ['1'=> 'ชาย',
