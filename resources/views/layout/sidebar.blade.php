@@ -29,7 +29,7 @@
 
              <li class="nav-item {{ Active::check('dashboard') }} ">
                <a class="nav-link" href="{{ route('page.dashboard') }}" >
-                 <i class="nav-icon fas fa-tachometer-alt"></i>
+                 <i class="nav-icon far fas fa-chart-pie"></i>
                  <p> Dashboard </p>
                </a>
              </li>

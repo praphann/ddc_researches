@@ -18,7 +18,7 @@ class MainController extends Controller
 
 
   public function dashboard(){
-    return view('layout.dashboard');
+    return view('frontend.dashboard');
   }
 
 
