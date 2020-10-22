@@ -15,22 +15,23 @@
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
-  <a href="index3.html" class="brand-link">
+  <a href="#" class="brand-link">
     <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
          style="opacity: .8">
-    <span class="brand-text font-weight-light">DIR</span>
+    <span class="brand-text"><b> DIR </b></span>
   </a>
 
 
   <!-- Sidebar -->
   <div class="sidebar">
     <!-- Sidebar user panel (optional) -->
+
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
         <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
       </div>
       <div class="info">
-        <a href="#" class="d-block">Alexander Pierce</a>
+        <a class="d-block"> ใส่ตัวแปร auth->username </a>
       </div>
     </div>
 
@@ -43,7 +44,7 @@
              <li class="nav-item">
               <a class="nav-link {{ Active::check('dashboard') }}" href="{{ route('page.dashboard') }}" >
                 <i class="nav-icon far fas fa-chart-pie"></i>
-                <p> Dashboard </p>
+                <p> DASHBOARD </p>
               </a>
             </li>
 
@@ -51,7 +52,7 @@
              <li class="nav-item">
                <a class="nav-link {{ Active::check('member_form') }} " href="{{ route('page.member') }}" >
                  <i class="nav-icon far fa-address-card"></i>
-                 <p> Member Manage </p>
+                 <p> จัดการสมาชิก </p>
                </a>
              </li>
 
@@ -68,7 +69,7 @@
              <li class="nav-item ">
                <a class="nav-link {{ Active::check('journal_form') }} " href="{{ route('page.journal') }}" >
                  <i class="nav-icon fa fa-map"></i>
-                 <p> Published Journal </p>
+                 <p> ข้อมูลการตีพิมพ์วารสาร </p>
                </a>
              </li>
 
@@ -76,7 +77,7 @@
              <li class="nav-item ">
                <a class="nav-link {{ Active::check('util_form') }} " href="{{ route('page.util') }}" >
                  <i class="nav-icon fas fa-tree"></i>
-                 <p> Utilization </p>
+                 <p> การนำไปใช้ประโยชน์ </p>
                </a>
              </li>
 
