@@ -1,5 +1,18 @@
 <!-- Main Sidebar Container -->
 
+<style media="screen">
+.nav-sidebar .nav-item>.nav-link {
+  padding: 15px;
+}
+
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: #808080;
+    color: #fff;
+}
+</style>
+
+
+
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
   <a href="index3.html" class="brand-link">
@@ -43,10 +56,11 @@
              </li>
 
 
+
              <li class="nav-item ">
                <a class="nav-link {{ Active::check('research_form') }} " href="{{ route('page.research') }}" >
                  <i class="nav-icon fas fa-book"></i>
-                 <p> Research Project </p>
+                 <p> ข้อมูลโครงการวิจัย </p>
                </a>
              </li>
 
