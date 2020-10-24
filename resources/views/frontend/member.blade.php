@@ -73,53 +73,218 @@
                   <h3 class="card-title"> แบบฟอร์มลงทะเบียน </h3>
 
                   <div class="card-tools">
-                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <button type="button" class="btn btn-info btn-sm" aria-expanded="true" data-card-widget="collapse" data-toggle="tooltip">
                       <i class="fas fa-users"> เพิ่มสมาชิก </i></button>
                     <!-- TABLE HEAD  BUTTON REMOVE ------------------------------>
                     <!-- <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
                       <i class="fas fa-times"></i></button> -->
                   </div>
                 </div>
-                <div class="card-body">
 
+                <div class="card-body">
                 <form role="form">
 
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                  </div>
-
-                  <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-
-                      <div class="input-group-append">
-                        <span class="input-group-text" id="">Upload</span>
-                      </div>
+              <div class="row">
+                  <div class="col-md-2">
+                    <div class="form-group">
+                      <lebel for="prefix">คำนำหน้าชื่อ</lebel>
+                      <select class="form-control" id="prefix" name="prefix" required>
+                        <option value="ไม่ระบุ">-- โปรดระบุ --</option>
+                        <option value="นาย">นาย</option>
+                        <option value="นาง">นาง</option>
+                        <option value="นางสาว">นางสาว</option>
+                      </select>
                     </div>
                   </div>
 
-                  <div class="form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  <div class="col-md-5">
+                    <div class="form-group">
+                      <lebel for="fname_th">ชื่อ (ภาษาไทย)</lebel>
+                      <input type="text" class="form-control" name="fname_th" placeholder="" required>
+                    </div>
                   </div>
 
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <div class="col-md-5">
+                    <div class="form-group">
+                      <lebel for="lname_th">นามสกุล (ภาษาไทย)</lebel>
+                      <input type="text" class="form-control" name="lname_th" placeholder="" required>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-2">
+                  <div class="form-group">
+            <!-- Blank -->
+                  </div>
                 </div>
+
+                <div class="col-md-5">
+                  <div class="form-group">
+                    <lebel for="fname_en">ชื่อ (ภาษาอังกฤษ)</lebel>
+                    <input type="text" class="form-control" name="fname_en" placeholder="" required>
+                  </div>
+                </div>
+
+                <div class="col-md-5">
+                  <div class="form-group">
+                    <lebel for="lname_en">นามสกุล (ภาษาอังกฤษ)</lebel>
+                    <input type="text" class="form-control" name="lname_en" placeholder="" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-2">
+                  <div class="form-group">
+                    <lebel for="gender">เพศ</lebel>
+                    <select class="form-control" id="gender" name="gender" required>
+                      <option value="ไม่ระบุ">-- โปรดระบุ --</option>
+                      <option value="ชาย">ชาย</option>
+                      <option value="หญิง">หญิง</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <lebel for="birthdate">วัน/เดือน/ปีเกิด</lebel>
+                    <input type="date" class="form-control" name="birthdate" placeholder="" required>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <lebel for="cid">เลขบัตรประจำตัวประชาชน</lebel>
+                    <input type="text" class="form-control" name="cid" placeholder="X-XXX-XXXXX-XX-X" maxlength="13" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <lebel for="nrms_id">รหัสนักวิจัย (ถ้ามี)</lebel>
+                    <input type="text" class="form-control" name="nrms_id" placeholder="" maxlength="30">
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <lebel for="orcid_id">เลขบัตรประจำตัวนักวิจัย (ถ้ามี)</lebel>
+                    <input type="text" class="form-control" name="orcid_id" placeholder="" maxlength="30">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <lebel for="position">ตำแหน่ง</lebel>
+                    <select class="form-control" id="position" name="position" required>
+                      <option value="ไม่ระบุ">-- โปรดระบุ --</option>
+                      <option value="นายแพทย์">นายแพทย์</option>
+                      <option value="นักวิชาการสาธารสุข">นักวิชาการสาธารสุข</option>
+                      <option value="นักวิชาการคอมพิวเตอร์">นักวิชาการคอมพิวเตอร์</option>
+                    </select>
+                  </div>
+                </div>
+
+                 <div class="col-md-6">
+                    <div class="form-group">
+                      <lebel for="edu_class">ระดับการศึกษาสูงสุด</lebel>
+                      <select class="form-control" id="edu_class" name="edu_class" required>
+                        <option value="ไม่ระบุ">-- โปรดระบุ --</option>
+                        <option value="ปริญญาตรี">ปริญญาตรี</option>
+                        <option value="ปริญญาโท">ปริญญาโท</option>
+                        <option value="ปริญญาเอก">ปริญญาเอก</option>
+                      </select>
+                    </div>
+                  </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <lebel for="dep_id">หน่วยงาน</lebel>
+                    <select class="form-control" id="dep_id" name="dep_id" required>
+                      <option value="ไม่ระบุ">-- โปรดระบุ --</option>
+                      <option value="หน่วยงาน A">หน่วยงาน A</option>
+                      <option value="หน่วยงาน B">หน่วยงาน B</option>
+                      <option value="หน่วยงาน C">หน่วยงาน C</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <lebel for="dep_address">ที่อยู่หน่วยงาน (ที่สามารถติดต่อได้)</lebel>
+                    <input type="text" class="form-control" name="dep_address" placeholder="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <lebel for="email">อีเมล</lebel>
+                    <input type="email" class="form-control" name="email" placeholder="-- โปรดระบุ --" required>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <lebel for="tel">เบอร์โทรศัพท์</lebel>
+                    <input type="text" class="form-control" name="tel" placeholder="-- โปรดระบุ --" maxlength="10" required>
+                  </div>
+                </div>
+
+                <div class="col-md-2">
+                  <div class="form-group">
+                    <lebel for="password">กำหนดรหัสผ่าน</lebel>
+                    <input type="password" class="form-control" name="password" placeholder="8 ตัวอักษร" maxlength="8" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <label for="exampleInputFile">File input</label>
+                  <div class="input-group">
+                    <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="file">
+                      <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                    </div>
+
+                    <div class="input-group-append">
+                      <span class="input-group-text" id="">Upload</span>
+                    </div>
+                  </div>
+                </div>
+              </div><br>
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                  <div class="form-check text-center">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">ตรวจสอบความถูกต้อง</label>
+                  </div>
+                  </div>
+                </div><br>
+
+                <div class="col-md-12">
+                  <div class="form-group">
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-success">บันทึก</button>
+                  </div>
+                  </div>
+                </div>
+              </div>
 
                 </form>
               </div>
-              </div>
+            </div>
           </section>
 <!-- END FORM  INSERT MEMBER -------------------------------------------------->
 
