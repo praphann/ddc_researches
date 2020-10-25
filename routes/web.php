@@ -21,15 +21,15 @@ Route::get('/dashboard','MainController@dashboard') -> name('page.dashboard');
 
 
 // FORM  MEMBER
-Route::get('/member_form','MainController@member') -> name('page.member');
+Route::get('/member_form','MemberController@member') -> name('page.member');
 // FORM  MEMBER  -- INSERT
-Route::post('/member_insert','MainController@insert') -> name('member.insert');
+Route::post('/member_insert','MemberController@insert') -> name('member.insert');
 
 
 // FORM  RESEARCH  PROJECT
-Route::get('/research_form','MainController@research') -> name('page.research');
+Route::get('/research_form','ResearchController@research') -> name('page.research');
 // FORM  RESEARCH  PROJECT  -- INSERT
-Route::post('/research_insert','MainController@insert') -> name('research.insert');
+Route::post('/research_insert','ResearchController@insert') -> name('research.insert');
 
 
 // FORM  PUBLISHED  JOURNAL

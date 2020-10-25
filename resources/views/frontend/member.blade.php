@@ -219,7 +219,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <lebel for="dep_address">ที่อยู่หน่วยงาน (ที่สามารถติดต่อได้)</lebel>
-                    <input type="text" class="form-control" name="dep_address" placeholder="">
+                    <textarea class="form-control rounded-0" id="dep_address" rows="3"></textarea>
                   </div>
                 </div>
               </div>
@@ -249,15 +249,15 @@
 
               <div class="row">
                 <div class="col-md-12">
-                  <label for="exampleInputFile">File input</label>
+                  <label for="exampleInputFile">แนบไฟล์</label>
                   <div class="input-group">
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="file">
+                      <input type="file" class="custom-file-input" id="file" >
                       <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                     </div>
 
                     <div class="input-group-append">
-                      <span class="input-group-text" id="">Upload</span>
+                      <span class="input-group-text" id="file">Upload</span>
                     </div>
                   </div>
                 </div>
