@@ -82,70 +82,70 @@
               <div class="card">
                 <div class="card card-secondary">
                   <div class="card-header">
-                    <h3 class="card-title"> รายชื่อสมาชิก </h3>
+                    <h3 class="card-title"> ข้อมูลโครงการที่เสร็จสิ้นแล้ว </h3>
                   </div>
+                </div>
 
-                  <div class="card-body">
-                    <div class="table-responsive">
-                      <table id="example" class="table table-striped projects">
-                        <thead>
-                            <tr>
-                              <th> ลำดับ </th>
-                              <th> ชื่อโครงการ </th>
-                              <th> ปี พ.ศ.ที่เริ่ม </th>
-                              <th> ปี พ.ศ.ที่เสร็จ </th>
-                              <th> ตีพิมพ์ </th>
-                              <th> สถานะการตรวจสอบ </th>
-                              <th>  </th>
-
-                              <!-- <th style="width: 1%"> # </th>
-                              <th style="width: 20%">Project Name</th>
-                              <th style="width: 30%">Team Members</th>
-                              <th>Project Progress</th>
-                              <th style="width: 8%" class="text-center">Status</th>
-                              <th style="width: 20%"> </th> -->
-                            </tr>
-                        </thead>
-
-                        <tbody>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-hover" id="example">
+                      <thead>
                           <tr>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
-                            <td>  </td>
+                            <th> ลำดับ </th>
+                            <th> ชื่อโครงการ </th>
+                            <th> ปี พ.ศ.ที่เริ่ม </th>
+                            <th> ปี พ.ศ.ที่เสร็จ </th>
+                            <th> ตีพิมพ์ </th>
+                            <th> สถานะการตรวจสอบ </th>
+                            <th>  </th>
 
-                            <td class="project-actions text-right">
-                                <a class="btn btn-success btn-sm" href="#">
-                                  <i class="fas fa-folder"></i>
-                                    View
-                                </a>
-                                <a class="btn btn-info btn-sm" href="#">
-                                  <i class="fas fa-pencil-alt"></i>
-                                    Edit
-                                </a>
-                                <a class="btn btn-danger btn-sm" href="#">
-                                  <i class="fas fa-trash"></i>
-                                    Attach files
-                                </a>
-                            </td>
+                            <!-- <th style="width: 1%"> # </th>
+                            <th style="width: 20%">Project Name</th>
+                            <th style="width: 30%">Team Members</th>
+                            <th>Project Progress</th>
+                            <th style="width: 8%" class="text-center">Status</th>
+                            <th style="width: 20%"> </th> -->
+                          </tr>
+                      </thead>
 
-                            <!-- <td class="td-actions text-center">
-                              <a type="button" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Edit" href="#">
-                                  <i class="material-icons">edit</i>
+                      <tbody>
+                        <tr>
+                          <td> sdf </td>
+                          <td>  sdf</td>
+                          <td> sdf </td>
+                          <td> sdf </td>
+                          <td> sdf </td>
+                          <td> sdf </td>
+
+                          <td class="project-actions text-right">
+                              <a class="btn btn-success btn-sm" href="#">
+                                <i class="fas fa-folder"></i>
+                                  View
                               </a>
+                              <a class="btn btn-info btn-sm" href="#">
+                                <i class="fas fa-pencil-alt"></i>
+                                  Edit
+                              </a>
+                              <a class="btn btn-danger btn-sm" href="#">
+                                <i class="fas fa-trash"></i>
+                                  Attach files
+                              </a>
+                          </td>
 
-                              <button type="button" class="btn btn-danger" title="Delete" onclick="#">
-                                  <i class="material-icons">delete</i>
-                              </button>
-                            </td> -->
-                            </tr>
+                          <!-- <td class="td-actions text-center">
+                            <a type="button" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Edit" href="#">
+                                <i class="material-icons">edit</i>
+                            </a>
 
-                        </tbody>
+                            <button type="button" class="btn btn-danger" title="Delete" onclick="#">
+                                <i class="material-icons">delete</i>
+                            </button>
+                          </td> -->
+                          </tr>
 
-                      </table>
-                    </div>
+                      </tbody>
+
+                    </table>
                   </div>
                 </div>
               </div>
