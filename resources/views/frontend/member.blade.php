@@ -725,6 +725,8 @@
             </div>
             </div>
           </section>
+<!-- END TABLE LIST MEMBER -------------------------------------------------->
+
 
         </div>
       </section>
