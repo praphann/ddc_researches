@@ -8,6 +8,19 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
 <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+<link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet' type='text/css'>
+
+  <!-- Fonts Style : Kanit -->
+    <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+    }
+    h1 {
+      font-family: 'Kanit', sans-serif;
+    }
+    </style>
+  <!-- END Fonts Style : Kanit -->
+
 @stop('css-custom')
 
 
