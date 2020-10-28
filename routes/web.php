@@ -42,3 +42,7 @@ Route::get('/journal_form','JournalController@journal') -> name('page.journal');
 Route::get('/util_form','UtilizationController@util') -> name('page.util');
 // FORM  ULTILIZATION  -- INSERT
 // Route::post('/util_insert','UtilizationController@insert') -> name('util.insert');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
