@@ -23,22 +23,22 @@ Route::get('/dashboard','MainController@dashboard') -> name('page.dashboard');
 // FORM  MEMBER
 Route::get('/member_form','MemberController@member') -> name('page.member');
 // FORM  MEMBER  -- INSERT
-Route::post('/member_insert','MemberController@insert') -> name('member.insert');
+// Route::post('/member_insert','MemberController@insert') -> name('member.insert');
 
 
 // FORM  RESEARCH  PROJECT
 Route::get('/research_form','ResearchController@research') -> name('page.research');
 // FORM  RESEARCH  PROJECT  -- INSERT
-Route::post('/research_insert','ResearchController@insert') -> name('research.insert');
+// Route::post('/research_insert','ResearchController@insert') -> name('research.insert');
 
 
 // FORM  PUBLISHED  JOURNAL
-Route::get('/journal_form','MainController@journal') -> name('page.journal');
+Route::get('/journal_form','JournalController@journal') -> name('page.journal');
 // FORM  PUBLISHED  JOURNAL  -- INSERT
-Route::post('/journal_insert','MainController@insert') -> name('journal.insert');
+// Route::post('/journal_insert','JournalController@insert') -> name('journal.insert');
 
 
 // FORM  ULTILIZATION
-Route::get('/util_form','MainController@util') -> name('page.util');
+Route::get('/util_form','UtilizationController@util') -> name('page.util');
 // FORM  ULTILIZATION  -- INSERT
-Route::post('/util_insert','MainController@insert') -> name('util.insert');
+// Route::post('/util_insert','UtilizationController@insert') -> name('util.insert');

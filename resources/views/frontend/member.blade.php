@@ -249,15 +249,15 @@
 
               <div class="row">
                 <div class="col-md-12">
-                  <label for="exampleInputFile">แนบไฟล์</label>
+                  <label for="files">แนบไฟล์</label>
                   <div class="input-group">
                     <div class="custom-file">
-                      <input type="file" class="custom-file-input" id="file" >
-                      <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                      <input type="file" class="custom-file-input" id="files" >
+                      <label class="custom-file-label" >Choose file</label>
                     </div>
 
                     <div class="input-group-append">
-                      <span class="input-group-text" id="file">Upload</span>
+                      <span class="input-group-text" id="files">Upload</span>
                     </div>
                   </div>
                 </div>

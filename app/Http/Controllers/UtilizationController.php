@@ -3,38 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\member;
 // use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use File;
 
 
-class MainController extends Controller
+class UtilizationController extends Controller
 {
-
-  public function index(){
-    return view('layout.home');
-  }
-
-
-  public function dashboard(){
-    return view('frontend.dashboard');
-  }
-
-
-  public function member(){
-    return view('frontend.member');
-  }
-
-
-  public function research(){
-    return view('frontend.research');
-  }
-
-
-  public function journal(){
-    return view('frontend.journal');
-  }
 
 
   public function util(){
