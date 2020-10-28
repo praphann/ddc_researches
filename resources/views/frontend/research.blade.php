@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
-<link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet' type='text/css'>
 
   <!-- Fonts Style : Kanit -->
     <style>
@@ -31,24 +30,23 @@
 
 
 <!-- Content Header (Page header) -->
-<div class="content-header">
-  <div class="container-fluid">
-    <div class="row mb-2">
-      <div class="col-sm-12">
-        <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item active"> ข้อมูลโครงการวิจัย </li>
-        </ol>
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-12">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item active"> ข้อมูลโครงการวิจัย </li>
+          </ol>
+        </div>
       </div>
     </div>
   </div>
-</div>
 <!-- /.content-header -->
 
-
-<!-- START MAIN Contents ----------------------------->
   <section class="content">
     <div class="container-fluid">
 
+    <!-- START SUMMARY Total Box -->
       <div class="row">
         <div class="col-md-4 col-4">
           <div class="small-box bg-info">
@@ -90,6 +88,8 @@
         </div>
       </div>
       <br>
+    <!-- END SUMMARY Total Box -->
+
 
 
     <!-- START From Input RESEARCH PROJECT -------------------------------------------------->
@@ -264,8 +264,6 @@
 
       </div>
   </section>
-<!-- END MAIN Contents ----------------------------->
-
 
 @stop
 
