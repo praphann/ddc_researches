@@ -106,7 +106,7 @@
         <div class="col-md-4">
           <div class="form-group">
             <b><lebel for="birthdate">ปี พ.ศ. เกิด</lebel></b>
-            <input type="text" id="datepicker1"  placeholder="วัน/เดือน/ปีเกิด" required>
+            <input type="text" id="datepicker8"  placeholder="วัน/เดือน/ปีเกิด" required>
           </div>
         </div>
 
@@ -257,7 +257,7 @@
 <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 
 <script>
-    $('#datepicker1').datepicker({
+    $('#datepicker8').datepicker({
         uiLibrary: 'bootstrap4'
     });
 </script>
