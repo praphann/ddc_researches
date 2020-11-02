@@ -31,4 +31,13 @@
   <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
   <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
 
+  <!-- Fonts -->
+  <!-- <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> -->
+
+  <!-- Styles -->
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" />
+  <link href="{{ asset('plugins/autocomplete/autocomplete.css')}}" rel="stylesheet" />
+
 <!-- END Custom Custom CSS+fonts this template -->

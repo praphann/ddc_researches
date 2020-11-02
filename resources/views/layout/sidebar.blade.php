@@ -39,15 +39,6 @@
             </li>
 
 
-             <li class="nav-item">
-               <a class="nav-link {{ Active::check('member_form') }} " href="{{ route('page.member') }}" >
-                 <i class="nav-icon far fa-address-card"></i>
-                 <p> จัดการสมาชิก </p>
-               </a>
-             </li>
-
-
-
              <li class="nav-item ">
                <a class="nav-link {{ Active::check('research_form') }} " href="{{ route('page.research') }}" >
                  <i class="nav-icon fas fa-book"></i>
@@ -71,7 +62,12 @@
                </a>
              </li>
 
-
+             <!-- <li class="nav-item">
+               <a class="nav-link {{ Active::check('member_form') }} " href="{{ route('page.member') }}" >
+                 <i class="nav-icon far fa-address-card"></i>
+                 <p> จัดการสมาชิก </p>
+               </a>
+             </li> -->
 
         <!-- TREEVIEW Start----------------------------------------------------------------->
                 <!-- <li class="nav-item has-treeview menu-open">

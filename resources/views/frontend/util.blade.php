@@ -7,6 +7,19 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
 <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+
+  <!-- Fonts Style : Kanit -->
+    <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+    }
+    h1 {
+      font-family: 'Kanit', sans-serif;
+    }
+    </style>
+  <!-- END Fonts Style : Kanit -->
 @stop('css-custom')
 
 @section('contents')
@@ -113,7 +126,7 @@
               <div class="row">
                   <div class="col-md-2">
                     <div class="form-group">
-                      <lebel for="prefix"> โครงการที่ </lebel>
+                      <lebel for="prefix"> รหัสโครงการ </lebel>
                       <select class="form-control" id="prefix" name="prefix" required>
                         <option value="ไม่ระบุ">-- โปรดระบุ --</option>
                         <option value="PRO_01">PRO_01</option>
@@ -157,7 +170,7 @@
               <div class="row">
                   <div class="col-md-2">
                     <div class="form-group">
-                      <lebel for="prefix"> โครงการที่ </lebel>
+                      <lebel for="prefix"> รหัสโครงการ </lebel>
                       <select class="form-control" id="prefix" name="prefix" required>
                         <option value="ไม่ระบุ">-- โปรดระบุ --</option>
                         <option value="PRO_01">PRO_01</option>
@@ -201,7 +214,7 @@
               <div class="row">
                   <div class="col-md-2">
                     <div class="form-group">
-                      <lebel for="prefix"> โครงการที่ </lebel>
+                      <lebel for="prefix"> รหัสโครงการ </lebel>
                       <select class="form-control" id="prefix" name="prefix" required>
                         <option value="ไม่ระบุ">-- โปรดระบุ --</option>
                         <option value="PRO_01">PRO_01</option>
@@ -245,7 +258,7 @@
               <div class="row">
                   <div class="col-md-2">
                     <div class="form-group">
-                      <lebel for="prefix"> โครงการที่ </lebel>
+                      <lebel for="prefix"> รหัสโครงการ </lebel>
                       <select class="form-control" id="prefix" name="prefix" required>
                         <option value="ไม่ระบุ">-- โปรดระบุ --</option>
                         <option value="PRO_01">PRO_01</option>
@@ -289,7 +302,7 @@
               <div class="row">
                   <div class="col-md-2">
                     <div class="form-group">
-                      <lebel for="prefix"> โครงการที่ </lebel>
+                      <lebel for="prefix"> รหัสโครงการ </lebel>
                       <select class="form-control" id="prefix" name="prefix" required>
                         <option value="ไม่ระบุ">-- โปรดระบุ --</option>
                         <option value="PRO_01">PRO_01</option>
@@ -332,17 +345,6 @@
 
               <br>
               <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                  <div class="form-check text-center">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">ตรวจสอบความถูกต้อง</label>
-                  </div>
-                  </div>
-                </div>
-                <br>
-
-                <br>
                 <div class="col-md-12">
                   <div class="form-group">
                   <div class="text-center">
@@ -562,30 +564,12 @@
 <!-- SCRIPT -->
 @section('js-custom-script')
 
-<!-- <script>
-  $(function () {
-      $("#example1").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-      $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script> -->
-
 <script type="text/javascript" class="init">
   $(document).ready(function() {
     $('#example').DataTable({
       dom: 'Bfrtip',
       buttons: [
-        'copy', 'csv', 'excel', 'print'
+        'excel', 'print'
       ]
     });
   });
@@ -596,6 +580,15 @@
     $('[data-toggle="tooltip"]').tooltip();
   });
 </script>
+
+<!-- bs-custom-file-input -->
+<script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+  bsCustomFileInput.init();
+});
+</script>
+
 
 @stop('js-custom-script')
 
@@ -609,4 +602,6 @@
 <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 @stop('js-custom')

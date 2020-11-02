@@ -1,4 +1,25 @@
 @extends('layout.main')
+
+@section('css-custom')
+<link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
+<link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+
+  <!-- Fonts Style : Kanit -->
+    <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+    }
+    h1 {
+      font-family: 'Kanit', sans-serif;
+    }
+    </style>
+  <!-- END Fonts Style : Kanit -->
+@stop('css-custom')
+
 @section('contents')
 
 
@@ -20,6 +41,7 @@
   </div>
   <!-- /.content-header -->
 
+<!-- START CONTENT  BOX ------------------------------------------------------->
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
