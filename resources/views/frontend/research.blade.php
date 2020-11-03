@@ -100,20 +100,23 @@
               <h3 class="card-title"> เพิ่มข้อมูลโครงการวิจัย </h3>
             </div>
 
-            <form role="form">
+            <!-- <form role="form"> -->
+            <form method="POST" action="{{ route('research.insert') }}">
+              @csrf
+
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInput1"> ชื่อโครงการ (ภาษาไทย) </label>
-                      <input type="text" class="form-control" placeholder="ชื่อโครงการ (ภาษาไทย)">
+                      <input type="text" class="form-control" name="pro_name_th" required>
                     </div>
                   </div>
 
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInput1"> ชื่อโครงการ (ภาษาอังกฤษ) </label>
-                      <input type="text" class="form-control" placeholder="ชื่อโครงการ (ภาษาอังกฤษ)">
+                      <input type="text" class="form-control" name="pro_name_en" required>
                     </div>
                   </div>
                 </div>
@@ -122,7 +125,8 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleSelect1"> ตำแหน่งในโครงการวิจัย </label>
-                      <select class="form-control" id="exampleFormControlSelect1">
+                      <select class="form-control" name="pro_position" required>
+                        <option value="" disabled="true" selected="true" >กรุณาเลือก</option>
                         <option> ผู้วิจัยหลัก </option>
                         <option> ผู้วิจัยหลัก-ร่วม </option>
                         <option> ผู้วิจัยร่วม </option>
@@ -135,12 +139,17 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleSelect1"> จำนวนผู้ร่วมวิจัย </label>
-                      <select class="form-control" id="exampleFormControlSelect1">
+                      <select class="form-control" name="pro_co_researcher" required>
+                        <option value="" disabled="true" selected="true" >กรุณาเลือก</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
                         <option>4</option>
                         <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
                       </select>
                     </div>
                   </div>
@@ -150,39 +159,73 @@
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="exampleDatepicker1"> ปี พ.ศ. ที่เริ่มโครงการ </label>
-                      <input type="text" id="datepicker1" placeholder="กรุณาเลือก วัน/เดือน/ปี" >
+                      <input type="text" placeholder="กรุณาเลือก วัน/เดือน/ปี" name="pro_start_date" id="datepicker1" required>
                     </div>
                   </div>
 
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="exampleDatepicker1"> ปี พ.ศ. ที่เสร็จสิ้นครงการ </label>
-                      <input type="text" id="datepicker2" placeholder="กรุณาเลือก วัน/เดือน/ปี" >
+                      <input type="text" class="form-control" placeholder="กรุณาเลือก วัน/เดือน/ปี" name="pro_end_date" id="datepicker2" required>
                     </div>
                   </div>
 
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="exampleSelect1"> โครงการได้ตีพิมพ์ </label>
-                      <select class="form-control" id="exampleFormControlSelect1">
+                      <select class="form-control" name="publish_status" required>
+                        <option value="" disabled="true" selected="true" > กรุณาเลือก </option>
                         <option> ใช่ </option>
                         <option> ไม่ใช่ </option>
                       </select>
                     </div>
                   </div>
                 </div>
+
+                <div class="row" >
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="exampleInputFile"> อัพโหลดไฟล์ </label>
+                      <div class="input-group">
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" name="files">
+                          <label class="custom-file-label" for="exampleInputFile"> Choose file </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
 
               <div class="card-footer">
-                <button type="submit" class="btn btn-success float-right "> บันทึกข้อมูล </button>
+                <button type="submit" class="btn btn-success float-right" value="บันทึกข้อมูล"> บันทึกข้อมูล </button>
               </div>
+
             </form>
+
+
+            <!-- Alert Notification -->
+              @if(session()->has('success'))
+                <div class="alert alert-success">
+                  {{ session()->get('success') }}
+                </div>
+              @endif
+              @if (Session::has('failure'))
+                <div class="alert alert-danger">
+                   {{ Session::get('failure') }}
+                </div>
+              @endif
+            <!-- END Alert Notification -->
+
+
 
           </div>
         </div>
       </div>
       <br>
     <!-- END From Input RESEARCH PROJECT -------------------------------------------------->
+
 
 
 
@@ -206,53 +249,38 @@
                       <th> ปี พ.ศ.ที่เสร็จ </th>
                       <th> ตีพิมพ์ </th>
                       <th> สถานะการตรวจสอบ </th>
-                      <th>  </th>
+                      <th class="text-right"> ACTIONS </th>
 
-                      <!-- <th style="width: 1%"> # </th>
-                      <th style="width: 20%">Project Name</th>
-                      <th style="width: 30%">Team Members</th>
-                      <th>Project Progress</th>
-                      <th style="width: 8%" class="text-center">Status</th>
-                      <th style="width: 20%"> </th> -->
                     </tr>
                 </thead>
 
                 <tbody>
+                  @foreach ($research as $value)
                   <tr>
-                    <td> sdf </td>
-                    <td>  sdf</td>
-                    <td> sdf </td>
-                    <td> sdf </td>
-                    <td> sdf </td>
-                    <td> sdf </td>
+                    <td> {{ $value->id }} </td>
+                    <td> {{ $value->pro_name_th }} </td>
+                    <td> {{ $value->pro_start_date }} </td>
+                    <td> {{ $value->pro_end_date }} </td>
+                    <td> {{ $value->publish_status }} </td>
+                    <td> {{ $value->publish_status }} </td>
 
                     <td class="project-actions text-right">
-                        <a class="btn btn-success btn-sm" href="#">
-                          <i class="fas fa-folder"></i>
-                            View
-                        </a>
                         <a class="btn btn-info btn-sm" href="#">
-                          <i class="fas fa-edit"></i>
-                          <!-- <i class="fas fa-pencil-alt"></i> -->
-                            Edit
+                          <i class="fas fa-folder"></i>
+                            VIEW
                         </a>
                         <a class="btn btn-danger btn-sm" href="#">
+                          <i class="fas fa-edit"></i>
+                            EDIT
+                        </a>
+                        <a class="btn btn-success btn-sm" href="#">
                           <i class="fas fa-paperclip"></i>
-                            Attach files
+                            VERIFIED
                         </a>
                     </td>
 
-                    <!-- <td class="td-actions text-center">
-                      <a type="button" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Edit" href="#">
-                          <i class="material-icons">edit</i>
-                      </a>
-
-                      <button type="button" class="btn btn-danger" title="Delete" onclick="#">
-                          <i class="material-icons">delete</i>
-                      </button>
-                    </td> -->
-                    </tr>
-
+                  </tr>
+                  @endforeach
                 </tbody>
 
               </table>
@@ -326,15 +354,41 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 
-<script>
+<!-- <script>
     $('#datepicker1').datepicker({
         uiLibrary: 'bootstrap4'
     });
 </script>
 
 <script>
+$( function() {
+  $( "#datepicker1" ).datepicker({
+    dateFormat : 'yy-mm-dd'
+  });
+});
+</script>
+
+<script>
     $('#datepicker2').datepicker({
         uiLibrary: 'bootstrap4'
     });
+</script> -->
+
+<script>
+$( function() {
+  $( "#datepicker1" ).datepicker({
+    dateFormat : 'yy-mm-dd'
+  });
+});
 </script>
+
+
+<script>
+$( function() {
+  $( "#datepicker2" ).datepicker({
+    dateFormat : 'yy-mm-dd'
+  });
+});
+</script>
+
 @stop('js-custom')

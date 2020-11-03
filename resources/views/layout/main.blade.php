@@ -3,10 +3,12 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Dashboard</title>
-  <!-- Tell the browser to be responsive to screen width -->
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('/img/moph-logo.png') }}">
+  <link rel="icon" type="image/png" href="{{ asset('/img/moph-logo.png') }}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> ระบบบันทึกข้อมูลนักวิจัย กรมควบคุมโรค </title>
 
 
   <!-- START Custom CSS+fonts this template -->

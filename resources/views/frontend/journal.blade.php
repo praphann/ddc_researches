@@ -34,7 +34,7 @@
       <div class="row mb-2">
         <div class="col-sm-12">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item active"> ข้อมูลโครงการวิจัย </li>
+            <li class="breadcrumb-item active"> ข้อมูลการตีพิมพ์วารสาร </li>
           </ol>
         </div>
       </div>
@@ -47,11 +47,11 @@
 
     <!-- START SUMMARY Total Box -->
       <div class="row">
-        <div class="col-md-4 col-4">
-          <div class="small-box bg-info">
+        <div class="col-md-6 col-6">
+          <div class="small-box bg-warning">
             <div class="inner">
               <h3>150</h3>
-              <p> โครงการวิจัยที่ทำเสร็จทั้งหมด </p>
+              <p> บทความตีพิมพ์ทั้งหมด </p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
@@ -60,11 +60,11 @@
           </div>
         </div>
 
-        <div class="col-md-4 col-4">
-          <div class="small-box bg-info">
+        <div class="col-md-6 col-6">
+          <div class="small-box bg-warning">
             <div class="inner">
               <h3>53<sup style="font-size: 20px">%</sup></h3>
-              <p> โครงการวิจัยที่เป็นผู้วิจัยหลัก </p>
+              <p> บทความผู้นิพนธ์หลักทั้งหมด </p>
             </div>
             <div class="icon">
               <i class="ion ion-person"></i>
@@ -73,18 +73,6 @@
           </div>
         </div>
 
-        <div class="col-md-4 col-4">
-          <div class="small-box bg-info">
-            <div class="inner">
-              <h3>44</h3>
-              <p> โครงการวิจัยที่ตีพิมพ์ทั้งหมด </p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
-          </div>
-        </div>
       </div>
       <br>
     <!-- END SUMMARY Total Box -->
@@ -94,25 +82,27 @@
     <!-- START From Input RESEARCH PROJECT -------------------------------------------------->
       <div class="row">
         <div class="col-md-12">
-          <div class="card card-warning">
+          <div class="card card-info">
             <div class="card-header">
-              <h3 class="card-title"> เพิ่มข้อมูลโครงการวิจัย </h3>
+              <h3 class="card-title"> เพิ่มข้อมูลการตีพิมพ์วารสาร </h3>
             </div>
 
-            <form role="form">
+            <!-- <form role="form"> -->
+            <form method="POST" action="{{ route('register') }}">
+             @csrf
+
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="exampleInput1"> ชื่อโครงการ (ภาษาไทย) </label>
-                      <input type="text" class="form-control" placeholder="ชื่อโครงการ (ภาษาไทย)">
+                      <label for="exampleInput1"> ชื่อบทความ (ภาษาไทย) </label>
+                      <input type="text" class="form-control" name="">
                     </div>
                   </div>
-
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="exampleInput1"> ชื่อโครงการ (ภาษาอังกฤษ) </label>
-                      <input type="text" class="form-control" placeholder="ชื่อโครงการ (ภาษาอังกฤษ)">
+                      <label for="exampleInput1"> ชื่อบทความ (ภาษาอังกฤษ) </label>
+                      <input type="text" class="form-control" name="">
                     </div>
                   </div>
                 </div>
@@ -120,52 +110,82 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="exampleSelect1"> ตำแหน่งในโครงการวิจัย </label>
-                      <select class="form-control" id="exampleFormControlSelect1">
-                        <option> ผู้วิจัยหลัก </option>
-                        <option> ผู้วิจัยหลัก-ร่วม </option>
-                        <option> ผู้วิจัยร่วม </option>
-                        <option> ผู้ช่วยวิจัย </option>
-                        <option> ที่ปรึกษาโครงการ </option>
-                      </select>
+                      <label for="exampleInput1"> ชื่อวารสาร (ภาษาไทย) </label>
+                      <input type="text" class="form-control" name="">
                     </div>
                   </div>
-
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="exampleSelect1"> จำนวนผู้ร่วมวิจัย </label>
-                      <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
+                      <label for="exampleInput1"> ชื่อวารสาร (ภาษาอังกฤษ) </label>
+                      <input type="text" class="form-control" name="">
                     </div>
                   </div>
                 </div>
 
                 <div class="row">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <label for="exampleDatepicker1"> ปี พ.ศ. ที่เริ่มโครงการ </label>
-                      <input type="text" id="datepicker1" placeholder="กรุณาเลือก วัน/เดือน/ปี" >
+                      <label for="exampleInput1"> ปีที่พิมพ์ </label>
+                      <input type="text" class="form-control" placeholder="xxxx" name="" maxlength="4" minlength="4"
+                             onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลขเท่านั้น !'); this.value='';}">
                     </div>
                   </div>
-
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <label for="exampleDatepicker1"> ปี พ.ศ. ที่เสร็จสิ้นครงการ </label>
-                      <input type="text" id="datepicker2" placeholder="กรุณาเลือก วัน/เดือน/ปี" >
+                      <label for="exampleInput1"> ฉบับที่ </label>
+                      <input type="text" class="form-control" name=""
+                             onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลขเท่านั้น !'); this.value='';}">
                     </div>
                   </div>
-
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                     <div class="form-group">
-                      <label for="exampleSelect1"> โครงการได้ตีพิมพ์ </label>
-                      <select class="form-control" id="exampleFormControlSelect1">
+                      <label for="exampleInput1"> เล่มที่ </label>
+                      <input type="text" class="form-control" name=""
+                             onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลขเท่านั้น !'); this.value='';}">
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="exampleInput1"> หน้า </label>
+                      <input type="text" class="form-control" placeholder="xxxx" name=""
+                             onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลขเท่านั้น !'); this.value='';}">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="exampleInput1"> เลข DOI </label>
+                      <input type="text" class="form-control" name="">
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="exampleSelect1"> การมีส่วนร่วมในบทความ </label>
+                      <select class="form-control" name="">
+                        <option value="" disabled="true" selected="true" >กรุณาเลือก</option>
+                        <option> ผู้นิพนธ์หลัก (first-author) </option>
+                        <option> ผู้นิพนธ์ร่วม (co-author) </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="exampleSelect1"> ท่านเป็นผู้รับผิดชอบบทความ </label>
+                      <select class="form-control" name="">
+                        <option value="" disabled="true" selected="true" >กรุณาเลือก</option>
                         <option> ใช่ </option>
                         <option> ไม่ใช่ </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label for="exampleSelect1"> ท่านเป็นผู้รับผิดชอบบทความ </label>
+                      <!-- SELECT ที่ดึงมาจากฐานข้อมูล Research_form Table -->
+                      <select class="form-control"  name="" >
+                        <option value="" disabled="true" selected="true" >กรุณาเลือก</option>
                       </select>
                     </div>
                   </div>
@@ -190,7 +210,7 @@
         <div class="card">
           <div class="card card-secondary">
             <div class="card-header">
-              <h3 class="card-title"> ข้อมูลโครงการที่เสร็จสิ้นแล้ว </h3>
+              <h3 class="card-title"> ข้อมูลบทความที่ตีพิมพ์แล้ว </h3>
             </div>
           </div>
 

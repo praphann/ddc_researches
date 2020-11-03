@@ -32,8 +32,11 @@ Route::get('/member_form','MemberController@member') -> name('page.member');
 
 // FORM  RESEARCH  PROJECT
 Route::get('/research_form','ResearchController@research') -> name('page.research');
-// FORM  RESEARCH  PROJECT  -- INSERT
-// Route::post('/research_insert','ResearchController@insert') -> name('research.insert');
+Route::get('/research_form','ResearchController@index2') -> name('page.research');
+
+Route::post('/research_insert','ResearchController@insert') -> name('research.insert');
+
+
 
 
 // FORM  PUBLISHED  JOURNAL
