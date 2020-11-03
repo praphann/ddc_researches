@@ -24,12 +24,19 @@
 
 @section('contents')
 
-  <!-- Content Header (Page header) -->
-        <div class="content-header">
-          <div class="container-fluid">
-          </div><!-- /.container-fluid -->
+<!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-12">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item active"> การนำไปใช้ประโยชน์ </li>
+          </ol>
         </div>
-  <!-- /.content-header -->
+      </div>
+    </div>
+  </div>
+<!-- /.content-header -->
 
 <!-- START CONTENT  BOX ------------------------------------------------------->
         <section class="content">
@@ -561,7 +568,7 @@
 
 @stop('contents')
 
-<!-- SCRIPT -->
+<!-- SCRIPT ------------------------------------------------------------------->
 @section('js-custom-script')
 
 <script type="text/javascript" class="init">

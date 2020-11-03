@@ -265,7 +265,7 @@
       </div>
   </section>
 
-@stop
+@stop('contents')
 
 
 <!-- SCRIPT -->
