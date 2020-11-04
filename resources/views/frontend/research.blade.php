@@ -8,6 +8,8 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
 <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+
+<!-- DatePicker Style -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 
@@ -159,14 +161,13 @@
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="exampleDatepicker1"> ปี พ.ศ. ที่เริ่มโครงการ </label>
-                      <input type="text" placeholder="กรุณาเลือก วัน/เดือน/ปี" name="pro_start_date" id="datepicker1" required>
+                      <input type="text" class="form-control" id="datepicker1" placeholder="กรุณาเลือก วัน/เดือน/ปี" name="pro_start_date" required>
                     </div>
                   </div>
-
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="exampleDatepicker1"> ปี พ.ศ. ที่เสร็จสิ้นครงการ </label>
-                      <input type="text" class="form-control" placeholder="กรุณาเลือก วัน/เดือน/ปี" name="pro_end_date" id="datepicker2" required>
+                      <input type="text" class="form-control" id="datepicker2" placeholder="กรุณาเลือก วัน/เดือน/ปี" name="pro_end_date" required>
                     </div>
                   </div>
 
@@ -351,44 +352,27 @@
 <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script>
+
+<!-- DatePicker Style -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 
-<!-- <script>
-    $('#datepicker1').datepicker({
-        uiLibrary: 'bootstrap4'
-    });
-</script>
-
 <script>
-$( function() {
-  $( "#datepicker1" ).datepicker({
-    dateFormat : 'yy-mm-dd'
-  });
-});
+    $('#datepicker1').datepicker({
+        uiLibrary: 'bootstrap4',
+        format: 'yy/mm/dd',
+        autoclose: true,
+        todayHighlight: true
+    });
 </script>
 
 <script>
     $('#datepicker2').datepicker({
-        uiLibrary: 'bootstrap4'
+        uiLibrary: 'bootstrap4',
+        format: 'yy/mm/dd',
+        autoclose: true,
+        todayHighlight: true
     });
-</script> -->
-
-<script>
-$( function() {
-  $( "#datepicker1" ).datepicker({
-    dateFormat : 'yy-mm-dd'
-  });
-});
-</script>
-
-
-<script>
-$( function() {
-  $( "#datepicker2" ).datepicker({
-    dateFormat : 'yy-mm-dd'
-  });
-});
 </script>
 
 @stop('js-custom')
