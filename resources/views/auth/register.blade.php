@@ -1,11 +1,25 @@
-@extends('layout.app')
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 3 | Registration Page</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-@section('css-custom')
+
+<!-- Font Awesome -->
 <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<!-- icheck bootstrap -->
 <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-<link rel="stylesheet" href="dist/css/adminlte.min.cwss">
+<!-- Theme style -->
+<link rel="stylesheet" href="dist/css/adminlte.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+<!-- Google Font: Source Sans Pro -->
+<link href='https://fonts.googleapis.com/css?family=Kanit:400,300&subset=thai,latin' rel='stylesheet' type='text/css'>
 
   <!-- Fonts Style : Kanit -->
     <style>
@@ -18,11 +32,13 @@
     </style>
   <!-- END Fonts Style : Kanit -->
 
-@stop('css-custom')
-
-@section('content')
+</head>
 
 <!-- START Register MEMBER ---------------------------------------------------->
+
+<br>
+<!-- BLANK -->
+</br>
 
 <div class="content-header">
   <div class="container text-center">
@@ -237,22 +253,16 @@
 
 <!-- END Register MEMBER ------------------------------------------------------>
 
-@stop('contents')
 
-<!-- SCRIPT -->
 
-@section('js-custom-script')
+<!-- SCRIPT ------------------------------------------------------------------->
 
-<script>
-  $(document).ready(function() {
-    $('[data-toggle="tooltip"]').tooltip();
-  });
-</script>
-
-@stop('js-custom-script')
-
-@section('js-custom')
-
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 
@@ -262,6 +272,7 @@
     });
 </script>
 
+<script src="{{ asset('plugins/autocomplete/autocomplete.js') }}"></script>
 <script>
 $(document).ready(function() {
     var position = "{{$position}}".split("|");
@@ -269,4 +280,4 @@ $(document).ready(function() {
 });
 </script>
 
-@stop('js-custom')
+</html>

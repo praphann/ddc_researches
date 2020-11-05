@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\util;
+use App\research;
 // use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use File;
@@ -17,46 +19,39 @@ class UtilizationController extends Controller
   }
 
 
+  public function insert(Request $request){
+    // dd($data_post);
+    $data_post = [
+      "result_pro_id"        => $request->result_pro_id,
+      "result_pro_name_th"   => $request->result_pro_name_th,
+      "util_type"            => $request->util_type,
+      "files"                => $request->files,
+      "review_status"        => $request->review_status,
+    ];
+    $insert = util::insert($data_post);
+    // $insert = DB::table('person_ddc_table')->insert($data_post);  /*person_ddc_table คือ = ชื่อ table*/
+
+    if($insert){
+      return redirect()->back()->with('success','Insert Succussfully');
+    } else {
+      return redirect()->back()->with('success','Insert Failed');
+    }
+  }
 
 
+  public function index2(){
+    // ถ้าเป็นภาษา SQL คือ select pro_code,pro_name from pop_prov orber by id,DESC limit 10
+    $sl_util  = util::select('id','result_pro_id','result_pro_name_th','result_pro_name_en',
+                             'util_type','review_status')->ORDERBY('id','DESC')->take(10)->get();
+    $sl_research   = research::select('pro_name_th','pro_name_en')->ORDERBY('pro_name_th','ASC')->get();
 
-  // public function member()
-  // {
-  //   $gender = ['1'=> 'ชาย',
-  //              '2'=> 'หญิง'
-  //           ];
-  //   //dd($query);
-  //   return view('frontend.member',
-  //     ['gender' => $gender]
-  //   );
-  // }
-  //
-  //
-  //
-  // public function insert(Request $request){
-  //   // dd($data_post);
-  //   // dd($request['0']->pro_code); เข้าไปดูข้อมูลใน array โดยเข้าถึง field ที่ชื่อ pro_code
-  //   $data_post = [
-  //     "title_name"  => $request->title_name,
-  //     "first_name"  => $request->first_name,
-  //     "last_name"   => $request->last_name,
-  //     "gender"      => $request->gender,
-  //     "birthdate"   => $request->birthdate,
-  //     "division"    => $request->division,
-  //     "position"    => $request->position,
-  //     "file"        => $request->file,
-  //     "date_entry"  => date('y-m-d')
-  //   ];
-  //   $insert = person::insert($data_post);
-  //   // $insert = DB::table('person_ddc_table')->insert($data_post);  /*person_ddc_table คือ = ชื่อ table*/
-  //
-  //   if($insert){
-  //     return redirect()->back()->with('success','Insert Succussfully');
-  //   } else {
-  //     return redirect()->back()->with('success','Insert Failed');
-  //   }
-  //
-  // }
+    return view('frontend.util',[
+      // "summary"    => $sl_summary,
+      // "member"     => $sl_member,
+      // "depart"     => $sl_depart
+      "datas"    => $sl_util,$sl_research
+    ]);
+  }
 
 
 }

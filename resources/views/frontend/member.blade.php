@@ -302,11 +302,11 @@
 <!-- END FORM  INSERT MEMBER -------------------------------------------------->
 
 <!-- START TABLE LIST MEMBER -------------------------------------------------->
-          <section class="content">
-            <div class="card">
+          <section class="card">
               <div class="card-body">
+                <div class="table-responsive">
                 <h5>รายชื่อสมาชิก</h5>
-                <table id="example" class="table table-striped projects">
+                <table style="width:100%" id="example1" class="table table-striped projects">
                     <thead>
                         <tr>
                             <th style="width: 1%">
@@ -751,7 +751,7 @@
 @section('js-custom-script')
 <script type="text/javascript" class="init">
   $(document).ready(function() {
-    $('#example').DataTable({
+    $('#example1').DataTable({
       dom: 'Bfrtip',
       buttons: [
         'excel', 'print'
@@ -778,4 +778,6 @@
 <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 @stop('js-custom')

@@ -47,5 +47,12 @@ Route::get('/journal_form','JournalController@journal') -> name('page.journal');
 
 // FORM  ULTILIZATION
 Route::get('/util_form','UtilizationController@util') -> name('page.util');
-// FORM  ULTILIZATION  -- INSERT
-// Route::post('/util_insert','UtilizationController@insert') -> name('util.insert');
+Route::get('/util_form','UtilizationController@index2') -> name('page.util');
+
+Route::post('/util_insert','UtilizationController@insert') -> name('util.insert');
+
+// FORM  SUMMARY
+Route::get('/summary_form','SummaryController@summary') -> name('page.summary');
+Route::get('/summary_form','SummaryController@index2') -> name('page.summary');
+
+Route::post('/summary_insert','SummaryController@insert') -> name('summary.insert');

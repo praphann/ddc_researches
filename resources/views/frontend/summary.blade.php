@@ -24,13 +24,14 @@
 
 @section('contents')
 
+
 <!-- Content Header (Page header) -->
   <div class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-12">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item active"> การนำไปใช้ประโยชน์ </li>
+            <li class="breadcrumb-item active"> สรุปข้อมูลสำหรับ (กนว.) </li>
           </ol>
         </div>
       </div>
@@ -43,11 +44,11 @@
           <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
             <div class="row">
-              <div class="col-md-12 col-12">
-                <div class="small-box bg-red">
+              <div class="col-md-4 col-4">
+                <div class="small-box bg-yellow">
                   <div class="inner">
-                    <h3> 150 </h3><br>
-                    <p> โครงการที่นำไปใช้ประโยชน์ทั้งหมด </p>
+                    <h3>150</h3>
+                    <p> หัวข้อ ??? </p>
                   </div>
                   <div class="icon">
                     <i class="ion ion-pie-graph"></i>
@@ -56,53 +57,27 @@
                 </div>
               </div>
 
-              <div class="col-md-3 col-3">
-                <div class="small-box bg-green">
+              <div class="col-md-4 col-4">
+                <div class="small-box bg-yellow">
                   <div class="inner">
-                    <h3> 53 <sup style="font-size: 20px"> % </sup></h3><br>
-                    <p> โครงการที่นำไปใช้ประโยชน์เชิงวิชาการ </p>
+                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+                    <p> หัวข้อ ??? </p>
                   </div>
                   <div class="icon">
-                    <i class="ion fas fa-brain"></i>
+                    <i class="ion ion-person"></i>
                   </div>
                   <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
                 </div>
               </div>
 
-              <div class="col-md-3 col-3">
-                <div class="small-box bg-green">
+              <div class="col-md-4 col-4">
+                <div class="small-box bg-yellow">
                   <div class="inner">
-                    <h3> 44 </h3><br>
-                    <p> โครงการที่นำไปใช้ประโยชน์เชิงสังคม/ชุมชน </p>
+                    <h3>44</h3>
+                    <p> หัวข้อ ??? </p>
                   </div>
                   <div class="icon">
-                    <i class="ion fas fa-users"></i>
-                  </div>
-                  <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
-                </div>
-              </div>
-
-              <div class="col-md-3 col-3">
-                <div class="small-box bg-green">
-                  <div class="inner">
-                    <h3> 23 </h3><br>
-                    <p> โครงการที่นำไปใช้ประโยชน์เชิงนโยบาย </p>
-                  </div>
-                  <div class="icon">
-                    <i class="ion fas fa-chalkboard-teacher"></i>
-                  </div>
-                  <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
-                </div>
-              </div>
-
-              <div class="col-md-3 col-3">
-                <div class="small-box bg-green">
-                  <div class="inner">
-                    <h3> 65 </h3><br>
-                    <p> โครงการที่นำไปใช้ประโยชน์เชิงพาณิชย์ </p>
-                  </div>
-                  <div class="icon">
-                    <i class="ion fas fa-donate"></i>
+                    <i class="ion ion-stats-bars"></i>
                   </div>
                   <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
                 </div>
@@ -371,58 +346,68 @@
           <br>
 <!-- END FORM  INSERT --------------------------------------------------------->
 
+
 <!-- START TABLE LIST --------------------------------------------------------->
           <section class="content">
             <div class="card">
-              <div class="card card-gray">
+                <div class="card card-gray">
                 <div class="card-header">
-                  <h3 class="card-title"> รายชื่อโครงการที่นำไปใช้ประโยชน์ </h3>
+                    <h3 class="card-title"> ตารางสรุปข้อมูลนักวิจัย </h3>
                 </div>
-              </div>
+                </div>
 
-              <div class="card-body">
+                <div class="card-body">
                 <div class="table-responsive">
-                  <table id="example1" class="table table-hover" style="width:100%">
+                    <table id="example1" class="table table-hover" style="width:100%">
                     <thead>
                         <tr>
                             <th style="text-align:center">ลำดับที่</th>
-                            <th style="text-align:center">รหัสโครงการ</th>
-                            <th style="text-align:center">ชื่อโครงการ</th>
-                            <th style="text-align:center">การนำไปใช้ประโยชน์</th>
-                            <th style="text-align:center">สถานะการตรวจสอบ</th>
+                            <th style="text-align:center">รหัสประจำตัวนักวิจัย</th>
+                            <th style="text-align:center">ชื่อ-นามสกุล</th>
+                            <th style="text-align:center">หน่วยงาน</th>
+                            <th style="text-align:center">จำนวนโครงการวิจัยทั้งหมด</th>
+                            <th style="text-align:center">จำนวนโครงการวิจัยที่เป็นผู้วิจัยหลักทั้งหมด</th>
+                            <th style="text-align:center">จำนวนบทความที่ตีพิมพ์ทั้งหมด</th>
+                            <th style="text-align:center">จำนวนบทความที่นำไปใช้ประโยชน์เชิงวิชาการ </th>
+                            <th style="text-align:center">ระดับนักวิจัย</th>
+                            <th style="text-align:center">ผู้ตรวจสอบข้อมูล</th>
                             <th class="text-right"> จัดการข้อมูล </th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        @foreach ($datas as $value)
+                        @foreach( $datas as $value )
                         <tr>
-                          <td> {{ $value->id }} </td>
-                          <td> {{ $value->result_pro_id }} </td>
-                          <td> {{ $value->result_pro_name_th." ".$value->result_pro_name_en }} </td>
-                          <td> {{ $value->util_type }} </td>
-                          <td> {{ $value->review_status }} </td>
+                            <td>{{ $value->id }}</td>
+                            <td>{{ $value->orcid_id }}</td>
+                            <td>{{ $value->prefix.$value->fname_th." ".$value->lname_th }}</td>
+                            <td>{{ $value->dep_id }}</td>
+                            <td>{{ $value->pro_end_total }}</td>
+                            <td>{{ $value->pro_major_total }}</td>
+                            <td>{{ $value->pro_publish_total }}</td>
+                            <td>{{ $value->util_result_academic }}</td>
+                            <td>{{ $value->researcher_level }}</td>
+                            <td>{{ $value->data_auditor }}</td>
 
-                          <td class="project-actions text-right">
-                              <a class="btn btn-info btn-sm" href="#">
-                                <i class="fas fa-folder"></i>
-                                  VIEW
-                              </a>
-                              <a class="btn btn-danger btn-sm" href="#">
-                                <i class="fas fa-edit"></i>
-                                  EDIT
-                              </a>
-                              <a class="btn btn-success btn-sm" href="#">
-                                <i class="fas fa-paperclip"></i>
-                                  VERIFIED
-                              </a>
-                          </td>
-
+                            <td class="project-actions text-right">
+                                <a class="btn btn-info btn-sm" href="#">
+                                  <i class="fas fa-folder"></i>
+                                    VIEW
+                                </a>
+                                <a class="btn btn-danger btn-sm" href="#">
+                                  <i class="fas fa-edit"></i>
+                                    EDIT
+                                </a>
+                                <a class="btn btn-success btn-sm" href="#">
+                                  <i class="fas fa-paperclip"></i>
+                                    VERIFIED
+                                </a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
-                  </table>
-                  </div>
+                    </table>
+                </div>
                 </div>
               </div>
             </div>
@@ -465,7 +450,6 @@ $(document).ready(function () {
 
 @section('js-custom')
 
-<!-- DataTables -->
 <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
@@ -475,5 +459,6 @@ $(document).ready(function () {
 <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script>
+
 
 @stop('js-custom')

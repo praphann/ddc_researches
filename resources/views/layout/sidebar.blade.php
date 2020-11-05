@@ -38,6 +38,12 @@
               </a>
             </li>
 
+            <li class="nav-item">
+             <a class="nav-link {{ Active::check('summary_form') }}" href="{{ route('page.summary') }}" >
+               <i class="nav-icon far fas fa-chart-line"></i>
+               <p> สรุปข้อมูลสำหรับ (กนว.) </p>
+             </a>
+            </li>
 
              <li class="nav-item ">
                <a class="nav-link {{ Active::check('research_form') }} " href="{{ route('page.research') }}" >

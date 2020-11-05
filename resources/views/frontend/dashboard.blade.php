@@ -82,20 +82,17 @@
                 </div>
               </div>
             </div>
-
             <br>
 <!-- END CONTENT  BOX --------------------------------------------------------->
 
 <!-- START AREA CHART --------------------------------------------------------->
-<section class="content">
-      <div class="container-fluid">
+
         <div class="row">
+          <!-- AREA CHART -->
           <div class="col-md-6">
-            <!-- AREA CHART -->
             <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">Area Chart</h3>
-
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                   </button>
@@ -107,11 +104,11 @@
                   <canvas id="areaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                 </div>
               </div>
-              <!-- /.card-body -->
             </div>
-            <!-- /.card -->
+          </div>
 
-            <!-- DONUT CHART -->
+          <!-- DONUT CHART -->
+          <div class="col-md-6">
             <div class="card card-danger">
               <div class="card-header">
                 <h3 class="card-title">Donut Chart</h3>
@@ -125,15 +122,16 @@
               <div class="card-body">
                 <canvas id="donutChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
               </div>
-              <!-- /.card-body -->
             </div>
-            <!-- /.card -->
+          </div>
+        </div>
 
-            <!-- PIE CHART -->
+        <div class="row">
+          <!-- PIE CHART -->
+          <div class="col-md-6">
             <div class="card card-danger">
               <div class="card-header">
                 <h3 class="card-title">Pie Chart</h3>
-
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                   </button>
@@ -143,18 +141,14 @@
               <div class="card-body">
                 <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
               </div>
-              <!-- /.card-body -->
             </div>
-            <!-- /.card -->
-
           </div>
-          <!-- /.col (LEFT) -->
+
+          <!-- LINE CHART -->
           <div class="col-md-6">
-            <!-- LINE CHART -->
             <div class="card card-info">
               <div class="card-header">
                 <h3 class="card-title">Line Chart</h3>
-
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                   </button>
@@ -166,15 +160,16 @@
                   <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                 </div>
               </div>
-              <!-- /.card-body -->
             </div>
-            <!-- /.card -->
+          </div>
+        </div>
 
-            <!-- BAR CHART -->
+        <div class="row">
+          <!-- BAR CHART -->
+          <div class="col-md-6">
             <div class="card card-success">
               <div class="card-header">
                 <h3 class="card-title">Bar Chart</h3>
-
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                   </button>
@@ -186,15 +181,14 @@
                   <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                 </div>
               </div>
-              <!-- /.card-body -->
             </div>
-            <!-- /.card -->
+          </div>
 
-            <!-- STACKED BAR CHART -->
+          <!-- STACKED BAR CHART -->
+          <div class="col-md-6">
             <div class="card card-success">
               <div class="card-header">
                 <h3 class="card-title">Stacked Bar Chart</h3>
-
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                   </button>
@@ -206,36 +200,37 @@
                   <canvas id="stackedBarChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                 </div>
               </div>
-              <!-- /.card-body -->
             </div>
-            <!-- /.card -->
-
           </div>
-          <!-- /.col (RIGHT) -->
         </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </section>
+
 <!-- END AREA CHART ----------------------------------------------------------->
 
-<!-- START TABLE LIST MEMBER -------------------------------------------------->
-          <section class="content">
-            <div class="card">
+<!-- START TABLE LIST --------------------------------------------------------->
+        <section class="content">
+          <div class="card">
+              <div class="card card-gray">
+              <div class="card-header">
+                <h3 class="card-title"> ตารางสรุปข้อมูลนักวิจัย </h3>
+              </div>
+              </div>
+
               <div class="card-body">
-                <h5>ตารางสรุปข้อมูลนักวิจัย</h5>
-                <table style="width:100%" id="example" class="table table-striped projects">
+              <div class="table-responsive">
+                    <table  id="example1" class="table table-hover" style="width:100%">
                     <thead>
                         <tr>
-                            <th style="text-align:center">ลำดับที่</th>
-                            <th style="text-align:center">รหัสโครงการ</th>
-                            <th style="text-align:center">ชื่อโครงการ</th>
-                            <th style="text-align:center">การนำไปใช้ประโยชน์</th>
-                            <th style="text-align:center">สถานะการตรวจสอบ</th>
-                            <th style="text-align:center">จัดการข้อมูล</th>
+                            <th style="text-align:center"> ลำดับที่ </th>
+                            <th style="text-align:center"> รหัสโครงการ </th>
+                            <th style="text-align:center"> ชื่อโครงการ </th>
+                            <th style="text-align:center"> การนำไปใช้ประโยชน์ </th>
+                            <th style="text-align:center"> สถานะการตรวจสอบ </th>
+                            <th class="text-right"> จัดการข้อมูล </th>
                         </tr>
                     </thead>
 
-                    <tbody style="width:100%" id="example" class="table table-striped projects">
+                    <tbody>
+  <!-- @*foreach( $datas as $value ) -->
                         <tr>
                             <td  style="text-align:center">
                                     1
@@ -257,165 +252,34 @@
                                     เชิงวิชาการ
                               </a>
                             </td>
-                            <td class="project-state">
+                            <td class="project-state text-center">
                                 <span class="badge badge-warning">รอการอนุมัติ</span>
                             </td>
-                            <td class="project-actions text-center">
-                                <a class="btn btn-primary btn-sm" href="#">
-                                    <i class="fas fa-folder">
-                                    </i>
-                                    View
-                                </a>
+                            <td class="project-actions text-right">
                                 <a class="btn btn-info btn-sm" href="#">
-                                    <i class="fas fa-pencil-alt">
-                                    </i>
-                                    Edit
+                                  <i class="fas fa-folder"></i>
+                                    VIEW
                                 </a>
                                 <a class="btn btn-danger btn-sm" href="#">
-                                    <i class="fas fa-trash">
-                                    </i>
-                                    Delete
+                                  <i class="fas fa-edit"></i>
+                                    EDIT
+                                </a>
+                                <a class="btn btn-success btn-sm" href="#">
+                                  <i class="fas fa-paperclip"></i>
+                                    VERIFIED
                                 </a>
                             </td>
                         </tr>
-
-                        <tr>
-                            <td  style="text-align:center">
-                                    2
-                            </td>
-                            <td  style="text-align:center">
-                                    PRO_01
-                            </td>
-                            <td>
-                                <a>
-                                    โครงการ ก
-                                </a>
-                                <br/>
-                                <small>
-                                    Project A
-                                </small>
-                            </td>
-                            <td  style="text-align:center">
-                              <a>
-                                    เชิงพาณิชย์
-                              </a>
-                            </td>
-                            <td class="project-state">
-                                <span class="badge badge-danger">ไม่อนุมัติ</span>
-                            </td>
-                            <td class="project-actions text-center">
-                                <a class="btn btn-primary btn-sm" href="#">
-                                    <i class="fas fa-folder">
-                                    </i>
-                                    View
-                                </a>
-                                <a class="btn btn-info btn-sm" href="#">
-                                    <i class="fas fa-pencil-alt">
-                                    </i>
-                                    Edit
-                                </a>
-                                <a class="btn btn-danger btn-sm" href="#">
-                                    <i class="fas fa-trash">
-                                    </i>
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td  style="text-align:center">
-                                    3
-                            </td>
-                            <td  style="text-align:center">
-                                    PRO_02
-                            </td>
-                            <td>
-                                <a>
-                                    โครงการ ข
-                                </a>
-                                <br/>
-                                <small>
-                                    Project B
-                                </small>
-                            </td>
-                            <td  style="text-align:center">
-                              <a>
-                                    เชิงนโยบาย
-                              </a>
-                            </td>
-                            <td class="project-state">
-                                <span class="badge badge-warning">รอการอนุมัติ</span>
-                            </td>
-                            <td class="project-actions text-center">
-                                <a class="btn btn-primary btn-sm" href="#">
-                                    <i class="fas fa-folder">
-                                    </i>
-                                    View
-                                </a>
-                                <a class="btn btn-info btn-sm" href="#">
-                                    <i class="fas fa-pencil-alt">
-                                    </i>
-                                    Edit
-                                </a>
-                                <a class="btn btn-danger btn-sm" href="#">
-                                    <i class="fas fa-trash">
-                                    </i>
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td  style="text-align:center">
-                                    4
-                            </td>
-                            <td  style="text-align:center">
-                                    PRO_03
-                            </td>
-                            <td>
-                                <a>
-                                    โครงการ ค
-                                </a>
-                                <br/>
-                                <small>
-                                    Project C
-                                </small>
-                            </td>
-                            <td  style="text-align:center">
-                              <a>
-                                    เชิงสังคม/ชุมชน
-                              </a>
-                            </td>
-                            <td class="project-state">
-                                <span class="badge badge-success">อนุมัติแล้ว</span>
-                            </td>
-                            <td class="project-actions text-center">
-                                <a class="btn btn-primary btn-sm" href="#">
-                                    <i class="fas fa-folder">
-                                    </i>
-                                    View
-                                </a>
-                                <a class="btn btn-info btn-sm" href="#">
-                                    <i class="fas fa-pencil-alt">
-                                    </i>
-                                    Edit
-                                </a>
-                                <a class="btn btn-danger btn-sm" href="#">
-                                    <i class="fas fa-trash">
-                                    </i>
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
+<!-- @*endforeach -->
                     </tbody>
                 </table>
               </div>
             </div>
+            </div>
+            </div>
           </section>
-
-        </div>
       </section>
-<!-- END TABLE LIST MEMBER ---------------------------------------------------->
+<!-- END TABLE LIST ----------------------------------------------------------->
 
 @stop('contents')
 
@@ -423,7 +287,7 @@
 @section('js-custom-script')
 <script type="text/javascript" class="init">
   $(document).ready(function() {
-    $('#example').DataTable({
+    $('#example1').DataTable({
       dom: 'Bfrtip',
       buttons: [
         'excel', 'print'
@@ -438,6 +302,14 @@
   });
 </script>
 
+<!-- bs-custom-file-input -->
+<script src="plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+  bsCustomFileInput.init();
+});
+</script>
+
 @stop('js-custom-script')
 
 @section('js-custom')
@@ -450,6 +322,7 @@
 <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
 <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script>
 
 <!-- Script -->
 <script>
