@@ -2,8 +2,8 @@
 
 
 @section('css-custom')
-<link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml">
+<!-- <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://www.datatables.net/rss.xml"> -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.4/css/buttons.dataTables.min.css">
 <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
@@ -29,7 +29,6 @@
 
 
 @section('contents')
-
 
 <!-- Content Header (Page header) -->
   <div class="content-header">
@@ -205,7 +204,6 @@
 
             </form>
 
-
             <!-- Alert Notification -->
               @if(session()->has('success'))
                 <div class="alert alert-success">
@@ -219,8 +217,6 @@
               @endif
             <!-- END Alert Notification -->
 
-
-
           </div>
         </div>
       </div>
@@ -230,7 +226,7 @@
 
 
 
-    <!-- START TABLE RESEARCH PROJECT -------------------------------------------------->
+    <!-- START TABLE -> RESEARCH PROJECT -------------------------------------------------->
       <section class="content">
         <div class="card">
           <div class="card card-secondary">
@@ -241,7 +237,7 @@
 
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-hover" id="example">
+              <table class="table table-hover" id="example55">
                 <thead>
                     <tr>
                       <th> ลำดับ </th>
@@ -251,7 +247,6 @@
                       <th> ตีพิมพ์ </th>
                       <th> สถานะการตรวจสอบ </th>
                       <th class="text-right"> ACTIONS </th>
-
                     </tr>
                 </thead>
 
@@ -289,71 +284,17 @@
           </div>
         </div>
       </section>
-    <!-- END TABLE RESEARCH PROJECT -------------------------------------------------->
+    <!-- END TABLE -> RESEARCH PROJECT -------------------------------------------------->
 
       </div>
   </section>
-
 @stop('contents')
 
 
-<!-- SCRIPT -->
+
 @section('js-custom-script')
 
-<!-- <script>
-  $(function () {
-      $("#example1").DataTable({
-      "responsive": true,
-      "autoWidth": false,
-    });
-      $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script> -->
-
-<script type="text/javascript" class="init">
-  $(document).ready(function() {
-    $('#example').DataTable({
-      dom: 'Bfrtip',
-      buttons: [
-        // 'copy', 'csv',
-        'excel', 'print'
-      ]
-    });
-  });
-</script>
-
-<script>
-  $(document).ready(function() {
-    $('[data-toggle="tooltip"]').tooltip();
-  });
-</script>
-
-
-
-
-@stop('js-custom-script')
-
-
-@section('js-custom')
-<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.flash.min.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
-<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script>
-
-<!-- DatePicker Style -->
+<!-- START DatePicker Style -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
 
@@ -374,5 +315,40 @@
         todayHighlight: true
     });
 </script>
+<!-- END DatePicker Style -->
 
+
+
+<script type="text/javascript" class="init">
+  $(document).ready(function() {
+    $('#example55').DataTable({
+      dom: 'Bfrtip',
+      buttons: [
+        'excel', 'print'
+      ]
+    });
+  });
+</script>
+
+<script>
+  $(document).ready(function() {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
+
+@stop('js-custom-script')
+
+
+
+@section('js-custom')
+<!-- DataTables -->
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.flash.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script>
 @stop('js-custom')

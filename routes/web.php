@@ -32,17 +32,18 @@ Route::get('/member_form','MemberController@member') -> name('page.member');
 
 // FORM  RESEARCH  PROJECT
 Route::get('/research_form','ResearchController@research') -> name('page.research');
-Route::get('/research_form','ResearchController@index2') -> name('page.research');
+Route::get('/research_form','ResearchController@table_research') -> name('page.research');
 
 Route::post('/research_insert','ResearchController@insert') -> name('research.insert');
 
 
 
-
 // FORM  PUBLISHED  JOURNAL
 Route::get('/journal_form','JournalController@journal') -> name('page.journal');
-// FORM  PUBLISHED  JOURNAL  -- INSERT
-// Route::post('/journal_insert','JournalController@insert') -> name('journal.insert');
+Route::get('/journal_form','JournalController@table_journal') -> name('page.journal');
+
+Route::post('/journal_insert','JournalController@insert') -> name('journal.insert');
+
 
 
 // FORM  ULTILIZATION
@@ -50,6 +51,8 @@ Route::get('/util_form','UtilizationController@util') -> name('page.util');
 Route::get('/util_form','UtilizationController@index2') -> name('page.util');
 
 Route::post('/util_insert','UtilizationController@insert') -> name('util.insert');
+
+
 
 // FORM  SUMMARY
 Route::get('/summary_form','SummaryController@summary') -> name('page.summary');

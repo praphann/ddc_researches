@@ -36,15 +36,15 @@ class ResearchController extends Controller
     // $insert = DB::table('person_ddc_table')->insert($data_post);  /*person_ddc_table คือ = ชื่อ table*/
 
     if($insert){
-      return redirect()->back()->with('success','Insert Succussfully');
+      return redirect()->back()->with('success','การบันทึกข้อมูลของคุณเสร็จสิ้นแล้ว');
     } else {
-      return redirect()->back()->with('success','Insert Failed');
+      return redirect()->back()->with('success','การบันทึกข้อมูลของคุณไม่สำเร็จ !!!');
     }
   }
 
 
 
-  public function index2(){
+  public function table_research(){
     // ถ้าเป็นภาษา SQL คือ select pro_code,pro_name from pop_prov orber by id,DESC limit 10
     $query = research::select('id','pro_name_th','pro_start_date','pro_end_date','publish_status',)
                      ->ORDERBY('id','DESC')->take(10)->get();
