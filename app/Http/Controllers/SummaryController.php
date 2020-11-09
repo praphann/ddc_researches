@@ -44,7 +44,7 @@ class SummaryController extends Controller
     }
 
 
-    public function index2(){
+    public function table_summary(){
       // ถ้าเป็นภาษา SQL คือ select pro_code,pro_name from pop_prov orber by id,DESC limit 10
       $sl_summary  = summary::select('id','pro_end_total','pro_major_total','pro_publish_total',
                                      'util_result_academic','data_auditor','researcher_level')->ORDERBY('id','DESC')->take(10)->get();

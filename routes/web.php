@@ -48,7 +48,7 @@ Route::post('/journal_insert','JournalController@insert') -> name('journal.inser
 
 // FORM  ULTILIZATION
 Route::get('/util_form','UtilizationController@util') -> name('page.util');
-Route::get('/util_form','UtilizationController@index2') -> name('page.util');
+Route::get('/util_form','UtilizationController@table_util') -> name('page.util');
 
 Route::post('/util_insert','UtilizationController@insert') -> name('util.insert');
 
@@ -56,6 +56,11 @@ Route::post('/util_insert','UtilizationController@insert') -> name('util.insert'
 
 // FORM  SUMMARY
 Route::get('/summary_form','SummaryController@summary') -> name('page.summary');
-Route::get('/summary_form','SummaryController@index2') -> name('page.summary');
+Route::get('/summary_form','SummaryController@table_summary') -> name('page.summary');
 
 Route::post('/summary_insert','SummaryController@insert') -> name('summary.insert');
+
+
+
+Route::get('dynamic_field', 'DynamicFieldUtilController@index');
+Route::post('dynamic_field/insert', 'DynamicFieldUtilController@insert')->name('dynamic-field.insert');

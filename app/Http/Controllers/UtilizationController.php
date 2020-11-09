@@ -39,7 +39,7 @@ class UtilizationController extends Controller
   }
 
 
-  public function index2(){
+  public function table_util(){
     // ถ้าเป็นภาษา SQL คือ select pro_code,pro_name from pop_prov orber by id,DESC limit 10
     $sl_util  = util::select('id','result_pro_id','result_pro_name_th','result_pro_name_en',
                              'util_type','review_status')->ORDERBY('id','DESC')->take(10)->get();

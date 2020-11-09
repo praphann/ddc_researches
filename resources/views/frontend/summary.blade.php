@@ -24,7 +24,6 @@
 
 @section('contents')
 
-
 <!-- Content Header (Page header) -->
   <div class="content-header">
     <div class="container-fluid">
@@ -87,7 +86,7 @@
 <!-- END CONTENT  BOX --------------------------------------------------------->
 
 <!-- START FORM  INSERT ------------------------------------------------------->
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-md-12">
               <div class="card card-gray">
                 <div class="card-header">
@@ -99,31 +98,25 @@
                   @csrf
 
               <div class="card-body">
-              <div class="row">
-                  <div class="col-md-2">
+                <div class="row">
+                  <div class="col-md-5">
                     <div class="form-group">
-                      <lebel for="prefix"> รหัสโครงการ </lebel>
-                      <select class="form-control" id="prefix" name="prefix" required>
-                        <option value="ไม่ระบุ">-- โปรดระบุ --</option>
-                        <option value="PRO_01">PRO_01</option>
-                        <option value="PRO_02">PRO_02</option>
-                        <option value="PRO_03">PRO_03</option>
+                      <b><lebel for="fname_th"> ชื่อโครงการ (th-en) </lebel></b>
+                      <select class="form-control" id="fname_th" name="fname_th" required>
+                        <option value="">กรุณาเลือก</option>
+                        <option value="โครงการ A">โครงการ A</option>
+                        <option value="โครงการ B">โครงการ B</option>
+                        <option value="โครงการ C">โครงการ C</option>
+                        <option value="โครงการ D">โครงการ D</option>
                       </select>
                     </div>
                   </div>
 
                   <div class="col-md-4">
                     <div class="form-group">
-                      <lebel for="fname_th"> ชื่อโครงการ (th-en) </lebel>
-                      <input type="text" class="form-control" name="fname_th" placeholder="" required>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <lebel for="lname_th"> การนำไปใช้ประโยชน์ </lebel>
+                      <b><lebel for="lname_th"> การนำไปใช้ประโยชน์ </lebel></b>
                       <select class="form-control" id="lname_th" name="lname_th" required>
-                        <option value="ไม่ระบุ">-- โปรดระบุ --</option>
+                        <option value="">กรุณาเลือก</option>
                         <option value="เชิงวิชาการ">เชิงวิชาการ</option>
                         <option value="เชิงสังคม/ชุมชน">เชิงสังคม/ชุมชน</option>
                         <option value="เชิงนโยบาย">เชิงนโยบาย</option>
@@ -133,183 +126,7 @@
                   </div>
 
                   <div class="col-md-3">
-                    <lebel for="files"> แนบไฟล์ </lebel>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="files">
-                        <label class="custom-file-label" for="files">Choose file</label>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-
-              <div class="row">
-                  <div class="col-md-2">
-                    <div class="form-group">
-                      <lebel for="prefix"> รหัสโครงการ </lebel>
-                      <select class="form-control" id="prefix" name="prefix" required>
-                        <option value="ไม่ระบุ">-- โปรดระบุ --</option>
-                        <option value="PRO_01">PRO_01</option>
-                        <option value="PRO_02">PRO_02</option>
-                        <option value="PRO_03">PRO_03</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <lebel for="fname_th"> ชื่อโครงการ (th-en) </lebel>
-                      <input type="text" class="form-control" name="fname_th" placeholder="" required>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <lebel for="lname_th"> การนำไปใช้ประโยชน์ </lebel>
-                      <select class="form-control" id="lname_th" name="lname_th" required>
-                        <option value="ไม่ระบุ">-- โปรดระบุ --</option>
-                        <option value="เชิงวิชาการ">เชิงวิชาการ</option>
-                        <option value="เชิงสังคม/ชุมชน">เชิงสังคม/ชุมชน</option>
-                        <option value="เชิงนโยบาย">เชิงนโยบาย</option>
-                        <option value="เชิงพาณิชย์">เชิงพาณิชย์</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3">
-                    <lebel for="files"> แนบไฟล์ </lebel>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="files">
-                        <label class="custom-file-label" for="files">Choose file</label>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-
-              <div class="row">
-                  <div class="col-md-2">
-                    <div class="form-group">
-                      <lebel for="prefix"> รหัสโครงการ </lebel>
-                      <select class="form-control" id="prefix" name="prefix" required>
-                        <option value="ไม่ระบุ">-- โปรดระบุ --</option>
-                        <option value="PRO_01">PRO_01</option>
-                        <option value="PRO_02">PRO_02</option>
-                        <option value="PRO_03">PRO_03</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <lebel for="fname_th"> ชื่อโครงการ (th-en) </lebel>
-                      <input type="text" class="form-control" name="fname_th" placeholder="" required>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <lebel for="lname_th"> การนำไปใช้ประโยชน์ </lebel>
-                      <select class="form-control" id="lname_th" name="lname_th" required>
-                        <option value="ไม่ระบุ">-- โปรดระบุ --</option>
-                        <option value="เชิงวิชาการ">เชิงวิชาการ</option>
-                        <option value="เชิงสังคม/ชุมชน">เชิงสังคม/ชุมชน</option>
-                        <option value="เชิงนโยบาย">เชิงนโยบาย</option>
-                        <option value="เชิงพาณิชย์">เชิงพาณิชย์</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3">
-                    <lebel for="files"> แนบไฟล์ </lebel>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="files">
-                        <label class="custom-file-label" for="files">Choose file</label>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-
-              <div class="row">
-                  <div class="col-md-2">
-                    <div class="form-group">
-                      <lebel for="prefix"> รหัสโครงการ </lebel>
-                      <select class="form-control" id="prefix" name="prefix" required>
-                        <option value="ไม่ระบุ">-- โปรดระบุ --</option>
-                        <option value="PRO_01">PRO_01</option>
-                        <option value="PRO_02">PRO_02</option>
-                        <option value="PRO_03">PRO_03</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <lebel for="fname_th"> ชื่อโครงการ (th-en) </lebel>
-                      <input type="text" class="form-control" name="fname_th" placeholder="" required>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <lebel for="lname_th"> การนำไปใช้ประโยชน์ </lebel>
-                      <select class="form-control" id="lname_th" name="lname_th" required>
-                        <option value="ไม่ระบุ">-- โปรดระบุ --</option>
-                        <option value="เชิงวิชาการ">เชิงวิชาการ</option>
-                        <option value="เชิงสังคม/ชุมชน">เชิงสังคม/ชุมชน</option>
-                        <option value="เชิงนโยบาย">เชิงนโยบาย</option>
-                        <option value="เชิงพาณิชย์">เชิงพาณิชย์</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3">
-                    <lebel for="files"> แนบไฟล์ </lebel>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="files">
-                        <label class="custom-file-label" for="files">Choose file</label>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-
-              <div class="row">
-                  <div class="col-md-2">
-                    <div class="form-group">
-                      <lebel for="prefix"> รหัสโครงการ </lebel>
-                      <select class="form-control" id="prefix" name="prefix" required>
-                        <option value="ไม่ระบุ">-- โปรดระบุ --</option>
-                        <option value="PRO_01">PRO_01</option>
-                        <option value="PRO_02">PRO_02</option>
-                        <option value="PRO_03">PRO_03</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="col-md-4">
-                    <div class="form-group">
-                      <lebel for="fname_th"> ชื่อโครงการ (th-en) </lebel>
-                      <input type="text" class="form-control" name="fname_th" placeholder="" required>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <lebel for="lname_th"> การนำไปใช้ประโยชน์ </lebel>
-                      <select class="form-control" id="lname_th" name="lname_th" required>
-                        <option value="ไม่ระบุ">-- โปรดระบุ --</option>
-                        <option value="เชิงวิชาการ">เชิงวิชาการ</option>
-                        <option value="เชิงสังคม/ชุมชน">เชิงสังคม/ชุมชน</option>
-                        <option value="เชิงนโยบาย">เชิงนโยบาย</option>
-                        <option value="เชิงพาณิชย์">เชิงพาณิชย์</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="col-md-3">
-                    <lebel for="files"> แนบไฟล์ </lebel>
+                    <b><lebel for="files"> แนบไฟล์ </lebel></b>
                     <div class="input-group">
                       <div class="custom-file">
                         <input type="file" class="custom-file-input" id="files">
@@ -325,10 +142,10 @@
                     <button type="submit" class="btn btn-success float-right" value="บันทึกข้อมูล"> บันทึกข้อมูล </button>
               </div>
 
-              </form>
+              </form> -->
 
               <!-- Alert Notification -->
-                @if(session()->has('success'))
+                <!-- @if(session()->has('success'))
                   <div class="alert alert-success">
                     {{ session()->get('success') }}
                   </div>
@@ -337,13 +154,13 @@
                   <div class="alert alert-danger">
                      {{ Session::get('failure') }}
                   </div>
-                @endif
+                @endif -->
               <!-- END Alert Notification -->
 
-            </div>
+            <!-- </div>
             </div>
           </div>
-          <br>
+          <br> -->
 <!-- END FORM  INSERT --------------------------------------------------------->
 
 
@@ -358,7 +175,7 @@
 
                 <div class="card-body">
                 <div class="table-responsive">
-                    <table id="example1" class="table table-hover" style="width:100%">
+                    <table class="table table-hover" id="example1" style="width:100%">
                     <thead>
                         <tr>
                             <th style="text-align:center">ลำดับที่</th>
@@ -459,6 +276,5 @@ $(document).ready(function () {
 <script type="text/javascript" language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.html5.min.js"></script>
 <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.6.4/js/buttons.print.min.js"></script>
-
 
 @stop('js-custom')
