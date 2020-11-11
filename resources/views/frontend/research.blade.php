@@ -126,13 +126,12 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleSelect1"> ตำแหน่งในโครงการวิจัย </label>
-                      <select class="form-control" name="pro_position" required>
+                      <!-- SELECT option ดึงมาจากฐานข้อมูล db_research_project -->
+                      <select class="form-control" name="pro_position" >
                         <option value="" disabled="true" selected="true" >กรุณาเลือก</option>
-                        <option> ผู้วิจัยหลัก </option>
-                        <option> ผู้วิจัยหลัก-ร่วม </option>
-                        <option> ผู้วิจัยร่วม </option>
-                        <option> ผู้ช่วยวิจัย </option>
-                        <option> ที่ปรึกษาโครงการ </option>
+                        @foreach ($pro_position as $key => $value)
+                          <option value="{{ $key }}"> {{ $value }} </option>
+                        @endforeach
                       </select>
                     </div>
                   </div>
@@ -140,17 +139,12 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleSelect1"> จำนวนผู้ร่วมวิจัย </label>
-                      <select class="form-control" name="pro_co_researcher" required>
+                      <!-- SELECT option ดึงมาจากฐานข้อมูล db_research_project -->
+                      <select class="form-control" name="pro_co_researcher" >
                         <option value="" disabled="true" selected="true" >กรุณาเลือก</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
+                        @foreach ($pro_co_researcher as $key => $value)
+                          <option value="{{ $key }}"> {{ $value }} </option>
+                        @endforeach
                       </select>
                     </div>
                   </div>
@@ -173,16 +167,18 @@
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="exampleSelect1"> โครงการได้ตีพิมพ์ </label>
-                      <select class="form-control" name="publish_status" required>
-                        <option value="" disabled="true" selected="true" > กรุณาเลือก </option>
-                        <option> ใช่ </option>
-                        <option> ไม่ใช่ </option>
+                      <!-- SELECT option ดึงมาจากฐานข้อมูล db_research_project -->
+                      <select class="form-control" name="publish_status" >
+                        <option value="" disabled="true" selected="true" >กรุณาเลือก</option>
+                        @foreach ($publish_status as $key => $value)
+                          <option value="{{ $key }}"> {{ $value }} </option>
+                        @endforeach
                       </select>
                     </div>
                   </div>
                 </div>
 
-                <div class="row" >
+                <!-- <div class="row" >
                   <div class="col-md-12">
                     <div class="form-group">
                       <label for="exampleInputFile"> อัพโหลดไฟล์ </label>
@@ -194,12 +190,13 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
 
               </div>
 
               <div class="card-footer">
-                <button type="submit" class="btn btn-success float-right" value="บันทึกข้อมูล"> บันทึกข้อมูล </button>
+                <button type="submit" class="btn btn-success float-right" value="บันทึกข้อมูล">
+                  <i class="fas fa-save"></i> &nbsp;บันทึกข้อมูล </button>
               </div>
 
             </form>
@@ -207,12 +204,12 @@
             <!-- Alert Notification -->
               @if(session()->has('success'))
                 <div class="alert alert-success">
-                  {{ session()->get('success') }}
+                  <strong> {{ session()->get('success') }} </strong>
                 </div>
               @endif
               @if (Session::has('failure'))
                 <div class="alert alert-danger">
-                   {{ Session::get('failure') }}
+                  <strong> {{ Session::get('failure') }} </strong>
                 </div>
               @endif
             <!-- END Alert Notification -->
@@ -260,21 +257,22 @@
                     <td> {{ $value->publish_status }} </td>
                     <td> {{ $value->publish_status }} </td>
 
-                    <td class="project-actions text-right">
+                    <td class="project-actions text-right" href="#">
                         <a class="btn btn-info btn-sm" href="#">
                           <i class="fas fa-folder"></i>
                             VIEW
                         </a>
-                        <a class="btn btn-danger btn-sm" href="#">
-                          <i class="fas fa-edit"></i>
+
+                        <a class="btn btn-warning btn-sm" title="EDIT" href=" {{ route('research.edit', $value->id) }} ">
+                          <i class="fas fa-folder"></i>
                             EDIT
                         </a>
-                        <a class="btn btn-success btn-sm" href="#">
+
+                        <a class="btn btn-danger btn-sm" href="#">
                           <i class="fas fa-paperclip"></i>
                             VERIFIED
                         </a>
                     </td>
-
                   </tr>
                   @endforeach
                 </tbody>
