@@ -254,8 +254,8 @@
                     <td> {{ $value->pro_name_th }} </td>
                     <td> {{ $value->pro_start_date }} </td>
                     <td> {{ $value->pro_end_date }} </td>
-                    <td> {{ $value->publish_status }} </td>
-                    <td> {{ $value->publish_status }} </td>
+                    <td> {{ $publish_status [ $value->publish_status ] }} </td>
+                    <td> {{ $publish_status [ $value->publish_status ] }} </td>
 
                     <td class="project-actions text-right" href="#">
                         <a class="btn btn-info btn-sm" href="#">
@@ -286,11 +286,20 @@
 
       </div>
   </section>
+
 @stop('contents')
 
 
 
 @section('js-custom-script')
+
+<script type="text/javascript">
+    var pro_position =
+    <?php
+    echo json_encode($pro_position, JSON_PRETTY_PRINT)
+    ?>;
+</script>
+
 
 <!-- START DatePicker Style -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -325,6 +334,8 @@
         'excel', 'print'
       ]
     });
+
+
   });
 </script>
 
