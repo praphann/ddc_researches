@@ -97,58 +97,58 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="exampleInput1"> ชื่อบทความ (ภาษาไทย) </label>
-                      <input type="text" class="form-control" name="article_name_th" required>
+                      <label for="exampleInput1"> ชื่อบทความ (ภาษาอังกฤษ) </label>
+                      <input type="text" class="form-control" name="article_name_en" required>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="exampleInput1"> ชื่อบทความ (ภาษาอังกฤษ) </label>
-                      <input type="text" class="form-control" name="article_name_en" required>
+                      <label for="exampleInput1"> ชื่อบทความ (ภาษาไทย) </label>
+                      <input type="text" class="form-control" name="article_name_th" >
                     </div>
                   </div>
                 </div>
 
                 <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label for="exampleInput1"> ชื่อวารสาร (ภาษาไทย) </label>
-                      <input type="text" class="form-control" name="journal_name_th" required>
-                    </div>
-                  </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleInput1"> ชื่อวารสาร (ภาษาอังกฤษ) </label>
                       <input type="text" class="form-control" name="journal_name_en" required>
                     </div>
                   </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="exampleInput1"> ชื่อวารสาร (ภาษาไทย) </label>
+                      <input type="text" class="form-control" name="journal_name_th" >
+                    </div>
+                  </div>
                 </div>
 
                 <div class="row">
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label for="exampleInput1"> ปีที่พิมพ์ </label>
-                      <input type="text" class="form-control" placeholder="xxxx" name="publish_years" maxlength="4" minlength="4"
+                      <label for="exampleInput1"> ปีที่พิมพ์ (year) </label>
+                      <input type="text" class="form-control" placeholder="ปี ค.ศ." name="publish_years" maxlength="4" minlength="4"
                              onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลขเท่านั้น !'); this.value='';}" required>
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label for="exampleInput1"> ฉบับที่ </label>
+                      <label for="exampleInput1"> ฉบับที่ (issue) </label>
                       <input type="text" class="form-control" name="publish_no"
                              onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลขเท่านั้น !'); this.value='';}" required>
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label for="exampleInput1"> เล่มที่ </label>
+                      <label for="exampleInput1"> เล่มที่ (volum)  </label>
                       <input type="text" class="form-control" name="publish_volume"
                              onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลขเท่านั้น !'); this.value='';}" required>
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
-                      <label for="exampleInput1"> หน้า </label>
+                      <label for="exampleInput1"> หน้า (no) </label>
                       <input type="text" class="form-control" placeholder="xxxx" name="publish_page"
                              onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลขเท่านั้น !'); this.value='';}">
                     </div>

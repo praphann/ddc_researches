@@ -109,15 +109,14 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="exampleInput1"> ชื่อโครงการ (ภาษาไทย) </label>
-                      <input type="text" class="form-control" name="pro_name_th" required>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-                    <div class="form-group">
                       <label for="exampleInput1"> ชื่อโครงการ (ภาษาอังกฤษ) </label>
                       <input type="text" class="form-control" name="pro_name_en" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="exampleInput1"> ชื่อโครงการ (ภาษาไทย) </label>
+                      <input type="text" class="form-control" name="pro_name_th">
                     </div>
                   </div>
                 </div>
@@ -157,6 +156,7 @@
                       <input type="text" class="form-control" id="datepicker1" placeholder="กรุณาเลือก วัน/เดือน/ปี" name="pro_start_date" required>
                     </div>
                   </div>
+
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="exampleDatepicker1"> ปี พ.ศ. ที่เสร็จสิ้นครงการ </label>
@@ -258,14 +258,14 @@
                     <td> {{ $publish_status [ $value->publish_status ] }} </td>
 
                     <td class="project-actions text-right" href="#">
-                        <a class="btn btn-info btn-sm" href="#">
-                          <i class="fas fa-folder"></i>
-                            VIEW
-                        </a>
-
                         <a class="btn btn-warning btn-sm" title="EDIT" href=" {{ route('research.edit', $value->id) }} ">
                           <i class="fas fa-folder"></i>
                             EDIT
+                        </a>
+
+                        <a class="btn btn-info btn-sm" href="#">
+                          <i class="fas fa-folder"></i>
+                            DOWNLOAD
                         </a>
 
                         <a class="btn btn-danger btn-sm" href="#">
@@ -293,12 +293,6 @@
 
 @section('js-custom-script')
 
-<script type="text/javascript">
-    var pro_position =
-    <?php
-    echo json_encode($pro_position, JSON_PRETTY_PRINT)
-    ?>;
-</script>
 
 
 <!-- START DatePicker Style -->
@@ -308,7 +302,7 @@
 <script>
     $('#datepicker1').datepicker({
         uiLibrary: 'bootstrap4',
-        format: 'yy/mm/dd',
+        format: 'yyyy/mm/dd',
         autoclose: true,
         todayHighlight: true
     });
@@ -317,7 +311,7 @@
 <script>
     $('#datepicker2').datepicker({
         uiLibrary: 'bootstrap4',
-        format: 'yy/mm/dd',
+        format: 'yyyy/mm/dd',
         autoclose: true,
         todayHighlight: true
     });
