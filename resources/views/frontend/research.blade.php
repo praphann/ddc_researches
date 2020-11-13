@@ -293,6 +293,12 @@
 
 @section('js-custom-script')
 
+<!-- <script type="text/javascript">
+    var pro_position =
+    <?php
+    echo json_encode($pro_position, JSON_PRETTY_PRINT)
+    ?>;
+</script> -->
 
 
 <!-- START DatePicker Style -->
