@@ -86,7 +86,7 @@
         <div class="col-md-12">
           <div class="card card-info">
             <div class="card-header">
-              <h3 class="card-title"> เพิ่มข้อมูลการตีพิมพ์วารสาร </h3>
+              <h5><b> เพิ่มข้อมูลการตีพิมพ์วารสาร </b></h5>
             </div>
 
             <!-- <form role="form"> -->
@@ -97,13 +97,13 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="exampleInput1"> ชื่อบทความ (ภาษาอังกฤษ) </label>
+                      <label for="exampleInput1"> ชื่อบทความ (ENG) </label>
                       <input type="text" class="form-control" name="article_name_en" required>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="exampleInput1"> ชื่อบทความ (ภาษาไทย) </label>
+                      <label for="exampleInput1"> ชื่อบทความ (TH) </label>
                       <input type="text" class="form-control" name="article_name_th" >
                     </div>
                   </div>
@@ -112,13 +112,13 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="exampleInput1"> ชื่อวารสาร (ภาษาอังกฤษ) </label>
+                      <label for="exampleInput1"> ชื่อวารสาร (ENG) </label>
                       <input type="text" class="form-control" name="journal_name_en" required>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="exampleInput1"> ชื่อวารสาร (ภาษาไทย) </label>
+                      <label for="exampleInput1"> ชื่อวารสาร (TH) </label>
                       <input type="text" class="form-control" name="journal_name_th" >
                     </div>
                   </div>
@@ -197,6 +197,21 @@
                     </div>
                   </div>
                 </div>
+
+                <div class="row" >
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="exampleInputFile"> อัพโหลดไฟล์ </label>
+                      <div class="input-group">
+                        <div class="custom-file">
+                          <input type="file" class="custom-file-input" name="files">
+                          <label class="custom-file-label"> Upload File ขนาดไม่เกิน 10 MB </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
 
               <div class="card-footer">

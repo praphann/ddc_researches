@@ -98,24 +98,24 @@
         <div class="col-md-12">
           <div class="card card-warning">
             <div class="card-header">
-              <h3 class="card-title"> เพิ่มข้อมูลโครงการวิจัย </h3>
+              <h5><b> เพิ่มข้อมูลโครงการวิจัย </b></h5>
             </div>
 
             <!-- <form role="form"> -->
-            <form method="POST" action="{{ route('research.insert') }}">
+            <form method="POST" action="{{ route('research.insert') }}" enctype="multipart/form-data">
               @csrf
 
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="exampleInput1"> ชื่อโครงการ (ภาษาอังกฤษ) </label>
+                      <label for="exampleInput1"> ชื่อโครงการ (ENG) </label>
                       <input type="text" class="form-control" name="pro_name_en" required>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="exampleInput1"> ชื่อโครงการ (ภาษาไทย) </label>
+                      <label for="exampleInput1"> ชื่อโครงการ (TH) </label>
                       <input type="text" class="form-control" name="pro_name_th">
                     </div>
                   </div>
@@ -126,7 +126,7 @@
                     <div class="form-group">
                       <label for="exampleSelect1"> ตำแหน่งในโครงการวิจัย </label>
                       <!-- SELECT option ดึงมาจากฐานข้อมูล db_research_project -->
-                      <select class="form-control" name="pro_position" >
+                      <select class="form-control" name="pro_position" required>
                         <option value="" disabled="true" selected="true" >กรุณาเลือก</option>
                         @foreach ($pro_position as $key => $value)
                           <option value="{{ $key }}"> {{ $value }} </option>
@@ -139,7 +139,7 @@
                     <div class="form-group">
                       <label for="exampleSelect1"> จำนวนผู้ร่วมวิจัย </label>
                       <!-- SELECT option ดึงมาจากฐานข้อมูล db_research_project -->
-                      <select class="form-control" name="pro_co_researcher" >
+                      <select class="form-control" name="pro_co_researcher" required>
                         <option value="" disabled="true" selected="true" >กรุณาเลือก</option>
                         @foreach ($pro_co_researcher as $key => $value)
                           <option value="{{ $key }}"> {{ $value }} </option>
@@ -168,7 +168,7 @@
                     <div class="form-group">
                       <label for="exampleSelect1"> โครงการได้ตีพิมพ์ </label>
                       <!-- SELECT option ดึงมาจากฐานข้อมูล db_research_project -->
-                      <select class="form-control" name="publish_status" >
+                      <select class="form-control" name="publish_status" required>
                         <option value="" disabled="true" selected="true" >กรุณาเลือก</option>
                         @foreach ($publish_status as $key => $value)
                           <option value="{{ $key }}"> {{ $value }} </option>
@@ -178,20 +178,19 @@
                   </div>
                 </div>
 
-                <!-- <div class="row" >
+                <div class="row" >
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label for="exampleInputFile"> อัพโหลดไฟล์ </label>
+                      <label for="expInputFile"> อัพโหลดไฟล์ </label>
                       <div class="input-group">
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" name="files">
-                          <label class="custom-file-label" for="exampleInputFile"> Choose file </label>
+                          <input type="file" class="custom-file-input" name="files" id="">
+                          <label class="custom-file-label" for="expInputFile"> Upload File ขนาดไม่เกิน 20 MB </label>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div> -->
-
+                </div>
               </div>
 
               <div class="card-footer">
@@ -203,13 +202,20 @@
 
             <!-- Alert Notification -->
               @if(session()->has('success'))
-                <div class="alert alert-success">
+                <div class="alert alert-success" id="success-alert">
                   <strong> {{ session()->get('success') }} </strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
               @endif
+
               @if (Session::has('failure'))
                 <div class="alert alert-danger">
                   <strong> {{ Session::get('failure') }} </strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
               @endif
             <!-- END Alert Notification -->
@@ -238,7 +244,7 @@
                 <thead>
                     <tr>
                       <th> ลำดับ </th>
-                      <th> ชื่อโครงการ </th>
+                      <th> ชื่อโครงการ (ENG) </th>
                       <th> ปี พ.ศ.ที่เริ่ม </th>
                       <th> ปี พ.ศ.ที่เสร็จ </th>
                       <th> ตีพิมพ์ </th>
@@ -251,7 +257,7 @@
                   @foreach ($research as $value)
                   <tr>
                     <td> {{ $value->id }} </td>
-                    <td> {{ $value->pro_name_th }} </td>
+                    <td> {{ $value->pro_name_en }} </td>
                     <td> {{ $value->pro_start_date }} </td>
                     <td> {{ $value->pro_end_date }} </td>
                     <td> {{ $publish_status [ $value->publish_status ] }} </td>
@@ -259,16 +265,16 @@
 
                     <td class="project-actions text-right" href="#">
                         <a class="btn btn-warning btn-sm" title="EDIT" href=" {{ route('research.edit', $value->id) }} ">
-                          <i class="fas fa-folder"></i>
+                          <i class="fas fa-edit"></i>
                             EDIT
                         </a>
 
-                        <a class="btn btn-info btn-sm" href="#">
-                          <i class="fas fa-folder"></i>
+                        <a class="btn btn-primary btn-sm" title="DOWNLOAD" href="#">
+                          <i class="fas fa-arrow-alt-circle-down"></i>
                             DOWNLOAD
                         </a>
 
-                        <a class="btn btn-danger btn-sm" href="#">
+                        <a class="btn btn-danger btn-sm" title="VERIFIED" href="#">
                           <i class="fas fa-paperclip"></i>
                             VERIFIED
                         </a>
@@ -295,16 +301,35 @@
 
 <!-- <script type="text/javascript">
     var pro_position =
-    <?php
-    echo json_encode($pro_position, JSON_PRETTY_PRINT)
-    ?>;
+    <?php echo json_encode($pro_position, JSON_PRETTY_PRINT) ?>;
 </script> -->
 
 
-<!-- START DatePicker Style -->
+<!-- START ALERT บันทึกข้อมูลสำเร็จ  -->
+<script type="text/javascript">
+  $(document).ready(function () {
+    window.setTimeout(function() {
+      $(".alert").fadeTo(1000, 0).slideUp(1000, function(){
+          $(this).remove();
+      });
+    }, 4000);
+  });
+</script>
+<!-- END ALERT บันทึกข้อมูลสำเร็จ  -->
+
+
+<!-- FILE INPUT -->
+<script type="text/javascript">
+  $(document).ready(function () {
+    bsCustomFileInput.init();
+  });
+</script>
+<!-- END FILE INPUT -->
+
+
+<!-- DatePicker Style -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-
 <script>
     $('#datepicker1').datepicker({
         uiLibrary: 'bootstrap4',
@@ -313,7 +338,6 @@
         todayHighlight: true
     });
 </script>
-
 <script>
     $('#datepicker2').datepicker({
         uiLibrary: 'bootstrap4',
@@ -334,17 +358,15 @@
         'excel', 'print'
       ]
     });
-
-
   });
 </script>
+
 
 <script>
   $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip();
   });
 </script>
-
 @stop('js-custom-script')
 
 

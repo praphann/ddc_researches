@@ -29,9 +29,21 @@ class ResearchController extends Controller
       "pro_start_date"    => $request->pro_start_date,
       "pro_end_date"      => $request->pro_end_date,
       "publish_status"    => $request->publish_status,
-      // "files"             => $request->files,
-      // "date_entry"        => date('y-m-d')
+      "files"             => $request->files,
+      "date_entry"        => date('y-m-d')
     ];
+      //  -- UPLOAD FILE --
+    if ($request->file('files')->isValid()) {
+          //TAG input [type=file] ดึงมาพักไว้ในตัวแปรที่ชื่อ files
+        $file=$request->file('files');
+          //ตั้งชื่อตัวแปร $file_name เพื่อเปลี่ยนชื่อ + นามสกุลไฟล์
+        $name='file_'.date('dmY_His');
+        $file_name = $name.'.'.$file->getClientOriginalExtension();
+          // upload file ไปที่ PATH : public/file_upload
+        $path = $file->storeAs('public/file_upload',$file_name);
+        $data_post['files'] = $file_name;
+    }
+
     $insert = research::insert($data_post);
     // $insert = DB::table('person_ddc_table')->insert($data_post);  /*person_ddc_table คือ = ชื่อ table*/
 
@@ -52,21 +64,18 @@ class ResearchController extends Controller
                               'pro_start_date','pro_end_date','publish_status')
                      ->ORDERBY('id','DESC')->take(10)->get();
 
-
-     $query2 = [1=> 'ผู้วิจัยหลัก',
-                2=> 'ผู้วิจัยหลัก-ร่วม',
-                3=> 'ผู้วิจัยร่วม',
-                4=> 'ผู้ช่วยวิจัย',
-                5=> 'ที่ปรึกษาโครงการ'
-               ];
-
+    $query2 = [1=> 'ผู้วิจัยหลัก',
+               2=> 'ผู้วิจัยหลัก-ร่วม',
+               3=> 'ผู้วิจัยร่วม',
+               4=> 'ผู้ช่วยวิจัย',
+               5=> 'ที่ปรึกษาโครงการ'
+              ];
 
     $query3 = [1=> '1', 2=> '2', 3=> '3',
                4=> '4', 5=> '5', 6=> '6',
                7=> '7', 8=> '8', 9=> '9',
                10=> '10'
               ];
-
 
      $query4 = [1=> 'ใช่',
                 2=> 'ไม่ใช่'

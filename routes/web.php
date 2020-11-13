@@ -44,8 +44,6 @@ Route::post('/save_research_edit','ResearchController@save_research_form') -> na
 
 
 
-
-
 // FORM  PUBLISHED  JOURNAL
 Route::get('/journal_form','JournalController@journal') -> name('page.journal');
 Route::get('/journal_form','JournalController@table_journal') -> name('page.journal');
