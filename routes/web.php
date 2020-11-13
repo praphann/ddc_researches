@@ -42,14 +42,15 @@ Route::post('/save_research_edit','ResearchController@save_research_form') -> na
 
 
 
-
-
-// FORM  PUBLISHED  JOURNAL
+// FORM  JOURNAL
 Route::get('/journal_form','JournalController@journal') -> name('page.journal');
 Route::get('/journal_form','JournalController@table_journal') -> name('page.journal');
-
-
+//  -- INSERT --
 Route::post('/journal_insert','JournalController@insert') -> name('journal.insert');
+//  -- EDIT --
+Route::get('/journal_edit/{id}','JournalController@edit_journal_form') -> name('journal.edit');
+//  -- SAVE --
+Route::post('/save_journal_edit','JournalController@save_journal_form') -> name('journal.save');
 
 
 

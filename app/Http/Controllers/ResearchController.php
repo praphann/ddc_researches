@@ -30,7 +30,7 @@ class ResearchController extends Controller
       "pro_end_date"      => $request->pro_end_date,
       "publish_status"    => $request->publish_status,
       "files"             => $request->files,
-      "date_entry"        => date('y-m-d')
+      "date_entry"        => date('Y-m-d H:i:s')
     ];
       //  -- UPLOAD FILE --
     if ($request->file('files')->isValid()) {
@@ -62,7 +62,8 @@ class ResearchController extends Controller
     // ถ้าเป็นภาษา SQL คือ select pro_code,pro_name from pop_prov orber by id,DESC limit 10
     $query = research::select('id','pro_name_th','pro_name_en','pro_position',
                               'pro_start_date','pro_end_date','publish_status')
-                     ->ORDERBY('id','DESC')->take(10)->get();
+                     ->ORDERBY('id','DESC')->get();
+                     // ->ORDERBY('id','DESC')->take(10)->get();
 
     $query2 = [1=> 'ผู้วิจัยหลัก',
                2=> 'ผู้วิจัยหลัก-ร่วม',

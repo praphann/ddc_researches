@@ -135,21 +135,21 @@
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInput1"> ฉบับที่ (issue) </label>
-                      <input type="text" class="form-control" name="publish_no"
+                      <input type="text" class="form-control" name="publish_no" maxlength="5"
                              onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลขเท่านั้น !'); this.value='';}" required>
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInput1"> เล่มที่ (volum)  </label>
-                      <input type="text" class="form-control" name="publish_volume"
+                      <input type="text" class="form-control" name="publish_volume" maxlength="5"
                              onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลขเท่านั้น !'); this.value='';}" required>
                     </div>
                   </div>
                   <div class="col-md-3">
                     <div class="form-group">
                       <label for="exampleInput1"> หน้า (no) </label>
-                      <input type="text" class="form-control" placeholder="xxxx" name="publish_page"
+                      <input type="text" class="form-control" placeholder="xxxx" name="publish_page" maxlength="5"
                              onKeyUp="if(isNaN(this.value)){ alert('กรุณากรอกตัวเลขเท่านั้น !'); this.value='';}">
                     </div>
                   </div>
@@ -187,10 +187,10 @@
                       <label for="exampleSelect1"> บทความที่เป็นผลจากโครงการวิจัย </label>
 
                       <!-- SELECT ดึงข้อมูลชื่อโครงการมาจาก -> db_research_project Table -->
-                      <select class="form-control" name="result_pro_name_th">
+                      <select class="form-control" name="result_pro_id">
                           <option value="" disabled="true" selected="true"> กรุณาเลือก </option>
                         @foreach ($journal_5 as $value)
-                          <option value = "{{ $value->id }}"> {{ $value->pro_name_th }} </option>
+                          <option value = "{{ $value->id }}"> {{ $value->pro_name_en }} </option>
                         @endforeach
                       </select>
 
@@ -201,34 +201,41 @@
                 <div class="row" >
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label for="exampleInputFile"> อัพโหลดไฟล์ </label>
+                      <label for="expInputFile"> อัพโหลดไฟล์ :<font color="red"> การตีพิมพ์วารสาร </font></label>
                       <div class="input-group">
                         <div class="custom-file">
                           <input type="file" class="custom-file-input" name="files">
-                          <label class="custom-file-label"> Upload File ขนาดไม่เกิน 10 MB </label>
+                          <label class="custom-file-label" for="expInputFile"> Upload File ขนาดไม่เกิน 10 MB </label>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
               </div>
 
               <div class="card-footer">
-                <button type="submit" class="btn btn-success float-right" value="บันทึกข้อมูล"> บันทึกข้อมูล </button>
+                <button type="submit" class="btn btn-success float-right" value="บันทึกข้อมูล">
+                  <i class="fas fa-save"></i> &nbsp;บันทึกข้อมูล </button>
               </div>
 
             </form>
 
             <!-- Alert Notification -->
               @if(session()->has('success'))
-                <div class="alert alert-success">
-                  {{ session()->get('success') }}
+                <div class="alert alert-success" id="success-alert">
+                  <strong> {{ session()->get('success') }} </strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
               @endif
+
               @if (Session::has('failure'))
                 <div class="alert alert-danger">
-                   {{ Session::get('failure') }}
+                  <strong> {{ Session::get('failure') }} </strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
               @endif
             <!-- END Alert Notification -->
@@ -276,16 +283,18 @@
                     <td> {{ $value->corres }} </td>
                     <td> {{ $value->corres }} </td>
 
-                    <td class="project-actions text-right">
-                        <a class="btn btn-success btn-sm" href="#">
-                          <i class="fas fa-folder"></i>
-                            VIEW
-                        </a>
-                        <a class="btn btn-warning btn-sm" href="#">
+                    <td class="project-actions text-right" href="#">
+                        <a class="btn btn-warning btn-sm" title="EDIT" href=" {{ route('journal.edit', $value->id) }} ">
                           <i class="fas fa-edit"></i>
                             EDIT
                         </a>
-                        <a class="btn btn-danger btn-sm" href="#">
+
+                        <a class="btn btn-primary btn-sm" title="DOWNLOAD" href="#">
+                          <i class="fas fa-arrow-alt-circle-down"></i>
+                            DOWNLOAD
+                        </a>
+
+                        <a class="btn btn-danger btn-sm" title="VERIFIED" href="#">
                           <i class="fas fa-paperclip"></i>
                             VERIFIED
                         </a>
@@ -312,6 +321,28 @@
 
 @section('js-custom-script')
 
+<!-- START ALERT บันทึกข้อมูลสำเร็จ  -->
+<script type="text/javascript">
+  $(document).ready(function () {
+    window.setTimeout(function() {
+      $(".alert").fadeTo(1000, 0).slideUp(1000, function(){
+          $(this).remove();
+      });
+    }, 3000);
+  });
+</script>
+<!-- END ALERT บันทึกข้อมูลสำเร็จ  -->
+
+
+<!-- FILE INPUT -->
+<script type="text/javascript">
+  $(document).ready(function () {
+    bsCustomFileInput.init();
+  });
+</script>
+<!-- END FILE INPUT -->
+
+
 <script type="text/javascript" class="init">
   $(document).ready(function() {
     $('#example44').DataTable({
@@ -328,7 +359,6 @@
     $('[data-toggle="tooltip"]').tooltip();
   });
 </script>
-
 @stop('js-custom-script')
 
 

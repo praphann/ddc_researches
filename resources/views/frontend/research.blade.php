@@ -181,10 +181,11 @@
                 <div class="row" >
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label for="expInputFile"> อัพโหลดไฟล์ </label>
+                      <label for="expInputFile"> อัพโหลดไฟล์ : <font color="red"> โครงการวิจัย </font></label>
+
                       <div class="input-group">
                         <div class="custom-file">
-                          <input type="file" class="custom-file-input" name="files" id="">
+                          <input type="file" class="custom-file-input" name="files">
                           <label class="custom-file-label" for="expInputFile"> Upload File ขนาดไม่เกิน 20 MB </label>
                         </div>
                       </div>
@@ -245,8 +246,8 @@
                     <tr>
                       <th> ลำดับ </th>
                       <th> ชื่อโครงการ (ENG) </th>
-                      <th> ปี พ.ศ.ที่เริ่ม </th>
-                      <th> ปี พ.ศ.ที่เสร็จ </th>
+                      <th> เริ่มโครงการ </th>
+                      <th> เสร็จสิ้นโครงการ </th>
                       <th> ตีพิมพ์ </th>
                       <th> สถานะการตรวจสอบ </th>
                       <th class="text-right"> ACTIONS </th>
@@ -264,7 +265,7 @@
                     <td> {{ $publish_status [ $value->publish_status ] }} </td>
 
                     <td class="project-actions text-right" href="#">
-                        <a class="btn btn-warning btn-sm" title="EDIT" href=" {{ route('research.edit', $value->id) }} ">
+                        <a class="btn btn-warning btn-sm" title="EDIT" href=" {{ route('journal.edit', $value->id) }} ">
                           <i class="fas fa-edit"></i>
                             EDIT
                         </a>
@@ -312,7 +313,7 @@
       $(".alert").fadeTo(1000, 0).slideUp(1000, function(){
           $(this).remove();
       });
-    }, 4000);
+    }, 3000);
   });
 </script>
 <!-- END ALERT บันทึกข้อมูลสำเร็จ  -->
