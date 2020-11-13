@@ -32,7 +32,7 @@ class ResearchController extends Controller
       "files"             => $request->files,
       "date_entry"        => date('Y-m-d H:i:s')
     ];
-      //  -- UPLOAD FILE --
+      //  --  UPLOAD FILE research_form  --
     if ($request->file('files')->isValid()) {
           //TAG input [type=file] ดึงมาพักไว้ในตัวแปรที่ชื่อ files
         $file=$request->file('files');
@@ -127,7 +127,5 @@ class ResearchController extends Controller
     }
   }
   //  -- END SAVE --
-
-
 
 }

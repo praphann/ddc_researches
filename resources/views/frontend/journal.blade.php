@@ -186,7 +186,7 @@
                     <div class="form-group">
                       <label for="exampleSelect1"> บทความที่เป็นผลจากโครงการวิจัย </label>
 
-                      <!-- SELECT ดึงข้อมูลชื่อโครงการมาจาก -> db_research_project Table -->
+                      <!-- SELECT ดึงข้อมูลชื่อโครงการมาจาก -> db_published_journal Table -->
                       <select class="form-control" name="result_pro_id">
                           <option value="" disabled="true" selected="true"> กรุณาเลือก </option>
                         @foreach ($journal_5 as $value)
