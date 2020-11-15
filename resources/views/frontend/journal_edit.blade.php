@@ -55,7 +55,7 @@
             <form action="{{ route('journal.save') }}" method="POST">
               @csrf
 
-              <!-- <div class="card-body">
+              <div class="card-body">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
@@ -69,7 +69,7 @@
                       <input type="text" class="form-control" name="article_name_th" value="{{ $data->pro_name_th }}">
                     </div>
                   </div>
-                </div> -->
+                </div>
 
 
 

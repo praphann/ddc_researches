@@ -50,7 +50,7 @@ class ResearchController extends Controller
     if($insert){
       return redirect()->back()->with('success','การบันทึกข้อมูลของคุณเสร็จสิ้นแล้ว');
     } else {
-      return redirect()->back()->with('success','การบันทึกข้อมูลของคุณไม่สำเร็จ !!!');
+      return redirect()->back()->with('failure','การบันทึกข้อมูลของคุณไม่สำเร็จ !!!');
     }
   }
   //  -- END INSERT --
@@ -63,7 +63,6 @@ class ResearchController extends Controller
     $query = research::select('id','pro_name_th','pro_name_en','pro_position',
                               'pro_start_date','pro_end_date','publish_status')
                      ->ORDERBY('id','DESC')->get();
-                     // ->ORDERBY('id','DESC')->take(10)->get();
 
     $query2 = [1=> 'ผู้วิจัยหลัก',
                2=> 'ผู้วิจัยหลัก-ร่วม',
@@ -99,8 +98,29 @@ class ResearchController extends Controller
   public function edit_research_form(Request $request){
     $edit = research::where('id' , $request->id)->first();
 
+    $edit2 = [1=> 'ผู้วิจัยหลัก',
+              2=> 'ผู้วิจัยหลัก-ร่วม',
+              3=> 'ผู้วิจัยร่วม',
+              4=> 'ผู้ช่วยวิจัย',
+              5=> 'ที่ปรึกษาโครงการ'
+             ];
+
+    $edit3 = [1=> '1', 2=> '2', 3=> '3',
+              4=> '4', 5=> '5', 6=> '6',
+              7=> '7', 8=> '8', 9=> '9',
+              10=> '10'
+             ];
+
+     $edit4 = [1=> 'ใช่',
+               2=> 'ไม่ใช่'
+              ];
+
      return view('frontend.research_edit',
-       ['data' => $edit]  /*นำตัวแปร data ไปใส่ใน research_edit.blade.php  คือ  value = "{{ $data->id }}"*/
+       ['data'    => $edit,
+        'data2'   => $edit2,
+        'data3'   => $edit3,
+        'data4'   => $edit4,
+       ]  /*นำตัวแปร data ไปใส่ใน research_edit.blade.php  คือ  value = "{{ $data->id }}"*/
     );
   }
   //  -- END EDIT --
@@ -123,7 +143,7 @@ class ResearchController extends Controller
     if($update){
        return redirect()->back()->with('success','การบันทึกข้อมูลของคุณเสร็จสิ้นแล้ว');
     } else {
-       return redirect()->back()->with('success','การบันทึกข้อมูลของคุณไม่สำเร็จ !!!');
+       return redirect()->back()->with('failure','การบันทึกข้อมูลของคุณไม่สำเร็จ !!!');
     }
   }
   //  -- END SAVE --

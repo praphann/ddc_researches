@@ -48,7 +48,7 @@
         <div class="col-md-12">
           <div class="card card-warning">
             <div class="card-header">
-              <h3 class="card-title"> แก้ไขข้อมูลโครงการวิจัย </h3>
+              <h5><b> แก้ไขข้อมูลโครงการวิจัย </b></h5>
             </div>
 
             <!-- <form role="form"> -->
@@ -59,15 +59,14 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="exampleInput1"> ชื่อโครงการ (ภาษาไทย) </label>
-                      <input type="text" class="form-control" name="pro_name_th" value="{{ $data->pro_name_th }}">
+                      <label for="exampleInput1"> ชื่อโครงการ (ENG) </label>
+                      <input type="text" class="form-control" name="pro_name_en" value="{{ $data->pro_name_en }}">
                     </div>
                   </div>
-
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label for="exampleInput1"> ชื่อโครงการ (ภาษาอังกฤษ) </label>
-                      <input type="text" class="form-control" name="pro_name_en" value="{{ $data->pro_name_en }}">
+                      <label for="exampleInput1"> ชื่อโครงการ (TH) </label>
+                      <input type="text" class="form-control" name="pro_name_th" value="{{ $data->pro_name_th }}">
                     </div>
                   </div>
                 </div>
@@ -76,39 +75,26 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleSelect1"> ตำแหน่งในโครงการวิจัย </label>
-                      <!-- <select class="form-control" name="pro_position">
-                        <option value="" disabled="true" selected="true" >กรุณาเลือก</option>
-                        <option> ผู้วิจัยหลัก </option>
-                        <option> ผู้วิจัยหลัก-ร่วม </option>
-                        <option> ผู้วิจัยร่วม </option>
-                        <option> ผู้ช่วยวิจัย </option>
-                        <option> ที่ปรึกษาโครงการ </option>
-                      </select> -->
+                      <!-- <input type="text" class="form-control" name="pro_position" value="{{-- $data2 [$data->pro_position] --}}"> **กรณี CONVERT Array to String** -->
 
+                      <!-- Query มาจากฐานข้อมูล db_research_project เพื่อมา UPDATE -->
                       <select class="form-control" name="pro_position">
-                        <option value="{{ '1' }}"> {{ 'ผู้วิจัยหลัก' }} </option>
-                        <option value="{{ '2' }}"> {{ 'ผู้วิจัยหลัก-ร่วม' }} </option>
-                        <option value="{{ '3' }}"> {{ 'ผู้วิจัยร่วม' }} </option>
-                        <option value="{{ '4' }}"> {{ 'ผู้ช่วยวิจัย' }} </option>
-                        <option value="{{ '5' }}"> {{ 'ที่ปรึกษาโครงการ' }} </option>
+                        @foreach ($data2 as $key => $value)
+                          <option value="{{ $key }}" > {{ $value }} </option>
+                        @endforeach
                       </select>
                     </div>
                   </div>
-
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="exampleSelect1"> จำนวนผู้ร่วมวิจัย </label>
-                      <select class="form-control" name="pro_co_researcher" required>
-                        <option value="" disabled="true" selected="true" >กรุณาเลือก</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
+                      <!-- <input type="text" class="form-control" name="pro_position" value="{{-- $data2 [$data->pro_co_researcher] --}}"> **กรณี CONVERT Array to String** -->
+
+                      <!-- Query มาจากฐานข้อมูล db_research_project เพื่อมา UPDATE -->
+                      <select class="form-control" name="pro_co_researcher">
+                        @foreach ($data3 as $key => $value)
+                          <option value="{{ $key }}" > {{ $value }} </option>
+                        @endforeach
                       </select>
                     </div>
                   </div>
@@ -119,7 +105,6 @@
                     <div class="form-group">
                       <label for="exampleDatepicker1"> ปี พ.ศ. ที่เริ่มโครงการ </label>
                       <input type="text" class="form-control" name="pro_start_date" value="{{ $data->pro_start_date }}">
-
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -132,10 +117,13 @@
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="exampleSelect1"> โครงการได้ตีพิมพ์ </label>
-                      <select class="form-control" name="publish_status" required>
-                        <option value="" disabled="true" selected="true" > กรุณาเลือก </option>
-                        <option> ใช่ </option>
-                        <option> ไม่ใช่ </option>
+                      <!-- <input type="text" class="form-control" name="pro_position" value="{{-- $data2 [$data->publish_status] --}}"> **กรณี CONVERT Array to String** -->
+
+                      <!-- Query มาจากฐานข้อมูล db_research_project เพื่อมา UPDATE -->
+                      <select class="form-control" name="publish_status">
+                        @foreach ($data4 as $key => $value)
+                          <option value="{{ $key }}" > {{ $value }} </option>
+                        @endforeach
                       </select>
                     </div>
                   </div>
@@ -149,21 +137,29 @@
                 </a>
 
                 <button type="submit" class="btn btn-success float-right" value="บันทึกข้อมูล">
-                  <i class="fas fa-save"></i> &nbsp;บันทึกข้อมูล </button>
+                  <i class="fas fa-save"></i>
+                    &nbsp;บันทึกข้อมูล
+                </button>
               </div>
 
             </form>
-            <br>
 
             <!-- Alert Notification -->
               @if(session()->has('success'))
-                <div class="alert alert-success">
-                  {{ session()->get('success') }}
+                <div class="alert alert-success" id="success-alert">
+                  <strong> {{ session()->get('success') }} </strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
               @endif
+
               @if (Session::has('failure'))
                 <div class="alert alert-danger">
-                   {{ Session::get('failure') }}
+                  <strong> {{ Session::get('failure') }} </strong>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
               @endif
             <!-- END Alert Notification -->
@@ -181,23 +177,34 @@
 
 @section('js-custom-script')
 
-<!-- START DatePicker Style -->
+<!-- START ALERT บันทึกข้อมูลสำเร็จ  -->
+<script type="text/javascript">
+  $(document).ready(function () {
+    window.setTimeout(function() {
+      $(".alert").fadeTo(1000, 0).slideUp(1000, function(){
+          $(this).remove();
+      });
+    }, 3000);
+  });
+</script>
+<!-- END ALERT บันทึกข้อมูลสำเร็จ  -->
+
+
+<!-- DatePicker Style -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-
 <script>
     $('#datepicker1').datepicker({
         uiLibrary: 'bootstrap4',
-        format: 'yy/mm/dd',
+        format: 'yyyy/mm/dd',
         autoclose: true,
         todayHighlight: true
     });
 </script>
-
 <script>
     $('#datepicker2').datepicker({
         uiLibrary: 'bootstrap4',
-        format: 'yy/mm/dd',
+        format: 'yyyy/mm/dd',
         autoclose: true,
         todayHighlight: true
     });

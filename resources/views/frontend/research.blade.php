@@ -265,7 +265,7 @@
                     <td> {{ $publish_status [ $value->publish_status ] }} </td>
 
                     <td class="project-actions text-right" href="#">
-                        <a class="btn btn-warning btn-sm" title="EDIT" href=" {{ route('journal.edit', $value->id) }} ">
+                        <a class="btn btn-warning btn-sm" title="EDIT" href=" {{ route('research.edit', $value->id) }} ">
                           <i class="fas fa-edit"></i>
                             EDIT
                         </a>
