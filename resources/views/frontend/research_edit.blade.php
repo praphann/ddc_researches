@@ -80,7 +80,8 @@
                       <!-- Query มาจากฐานข้อมูล db_research_project เพื่อมา UPDATE -->
                       <select class="form-control" name="pro_position">
                         @foreach ($data2 as $key => $value)
-                          <option value="{{ $key }}" > {{ $value }} </option>
+                          <option value="{{ $key }}"
+                          {{ $data->pro_position == $key ? 'selected' : '' }}> {{ $value }} </option>
                         @endforeach
                       </select>
                     </div>
@@ -93,7 +94,8 @@
                       <!-- Query มาจากฐานข้อมูล db_research_project เพื่อมา UPDATE -->
                       <select class="form-control" name="pro_co_researcher">
                         @foreach ($data3 as $key => $value)
-                          <option value="{{ $key }}" > {{ $value }} </option>
+                          <option value="{{ $key }}"
+                          {{ $data->pro_co_researcher == $key ? 'selected' : '' }}> {{ $value }} </option>
                         @endforeach
                       </select>
                     </div>
@@ -122,7 +124,8 @@
                       <!-- Query มาจากฐานข้อมูล db_research_project เพื่อมา UPDATE -->
                       <select class="form-control" name="publish_status">
                         @foreach ($data4 as $key => $value)
-                          <option value="{{ $key }}" > {{ $value }} </option>
+                          <option value="{{ $key }}"
+                          {{ $data->publish_status == $key ? 'selected' : '' }}> {{ $value }} </option>
                         @endforeach
                       </select>
                     </div>
