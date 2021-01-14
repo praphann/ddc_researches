@@ -68,6 +68,7 @@ class JournalController extends Controller
   public function table_journal(){
     // ถ้าเป็นภาษา SQL คือ select pro_code,pro_name from pop_prov orber by id,DESC limit 10
     $query  = research::select('id','pro_name_en')->get();
+    
     $query2 = journal::select('id','article_name_th','journal_name_th','publish_years','corres')
                      ->ORDERBY('id','DESC')->get();
                      // ->ORDERBY('id','DESC')->take(10)->get();

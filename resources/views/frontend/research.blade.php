@@ -153,14 +153,16 @@
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="exampleDatepicker1"> ปี พ.ศ. ที่เริ่มโครงการ </label>
-                      <input type="text" class="form-control" id="datepicker1" placeholder="กรุณาเลือก วัน/เดือน/ปี" name="pro_start_date" required>
+                      <input type="text" class="form-control" id="datepicker1" placeholder="กรุณาเลือก วัน/เดือน/ปี"
+                             name="pro_start_date" autocomplete="off" required>
                     </div>
                   </div>
 
                   <div class="col-md-4">
                     <div class="form-group">
                       <label for="exampleDatepicker1"> ปี พ.ศ. ที่เสร็จสิ้นครงการ </label>
-                      <input type="text" class="form-control" id="datepicker2" placeholder="กรุณาเลือก วัน/เดือน/ปี" name="pro_end_date" required>
+                      <input type="text" class="form-control" id="datepicker2" placeholder="กรุณาเลือก วัน/เดือน/ปี"
+                             name="pro_end_date" autocomplete="off" required>
                     </div>
                   </div>
 
